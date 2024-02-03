@@ -11,8 +11,9 @@ fi
 mkdir -p ${linux_build_path}
 
 cd ${linux_build_path}
-cmake -DBUILD_TEST=ON                            \
-      -DCMAKE_INSTALL_PREFIX=${linux_build_path} \
+cmake -DCMAKE_INSTALL_PREFIX=${linux_build_path} \
+      -DBUILD_TEST=OFF                           \
+      -DWITH_CPP_SUGER=ON                        \
 ..
 
 make -j4
