@@ -14,7 +14,7 @@
 #include "tuple_module.h"
 #include "vector_module.h"
 
-TEST(TestVector, back_test_case) {
+TEST(test11_vector, back_test_case) {
     std::vector<Person> person;
     // auto p = Person(1);
     // person.emplace_back(std::move(p));
@@ -24,7 +24,7 @@ TEST(TestVector, back_test_case) {
     // person.push_back(p);
 }
 
-TEST(TestAutoDecltype, auto_decltype_test_case) {
+TEST(test11_auto_decltype, auto_decltype_test_case) {
     int n = 10;
     int &r1 = n;
     auto r2 = r1;
@@ -35,15 +35,15 @@ TEST(TestAutoDecltype, auto_decltype_test_case) {
     std::cout << n << ", " << r1 << ", " << r3 << std::endl;
 }
 
-TEST(TestUsing, using_map_test_case) {
+TEST(test11_using, using_map_test_case) {
     str_map<int> mp;
 }
 
-TEST(TestFunction, func_arg_test_case) {
+TEST(test11_function, func_arg_test_case) {
     VairFun(4, 100, 110, 120, 130);
 }
 
-TEST(TestTemplate, variable_template_test_case) {
+TEST(test11_template, variable_template_test_case) {
     VarFun(1, "Hello World!", 2.34);
 }
 
@@ -51,25 +51,25 @@ TEST(TestTuple, tuple_test_case) {
     UseApisOfTuple();
 }
 
-TEST(TestClass, class_test_case) {
+TEST(test11_class, class_test_case) {
     Foo a1(123);
     Foo a2 = 123;
     a2.Print();
 }
 
-TEST(TestLambda, lambda_test_case) {
+TEST(test11_lambda, lambda_test_case) {
     SortWithLambda();
     SortWithFunc();
     LambdaRename();
     PassValVsRef();
 }
 
-TEST(TestConstexpr, constexpr_test_case) {
+TEST(test11_constexpr, constexpr_test_case) {
     ReassignToReadOnlyVar();
     InitialArray();
 }
 
-TEST(TestReference, reference_test_case) {
+TEST(test11_reference, reference_test_case) {
     // construct
     std::cout << "Demo1: " << std::endl;
     Demo demo1 = GetDemo();
@@ -81,13 +81,13 @@ TEST(TestReference, reference_test_case) {
     Demo demo3 = std::move(demo1);
 }
 
-TEST(TestReference, lval_rval_test_case) {
+TEST(test11_reference, lval_rval_test_case) {
     LvalRvalDemo demo(10);
     std::cout << demo.GetNum() << std::endl;
     std::cout << std::move(demo).GetNum() << std::endl;
 }
 
-TEST(TestReference, ref_qualifier_test_case) {
+TEST(test11_reference, ref_qualifier_test_case) {
     RefQualifierDemo demo(10, 20);
     std::cout << demo.GetNumLvalRef() << std::endl;
     // std::cout << std::move(demo).GetNumLvalRef() << std::endl;
@@ -95,24 +95,24 @@ TEST(TestReference, ref_qualifier_test_case) {
     std::cout << std::move(demo).GetNumRvalRef() << std::endl;
 }
 
-TEST(TestForward, forward_test_case) {
+TEST(test11_forward, forward_test_case) {
     Func(5);
     int val = 1;
     Func(val);
 }
 
-TEST(TestMoveConstruct, move_construct_test_case) {
+TEST(test11_move_construct, move_construct_test_case) {
     Second second;
     Second second_move = std::move(second);
     second_move.Print();
 }
 
-TEST(TestSmartPointer, shared_ptr_test_case) {
+TEST(test_smart_pointer, shared_ptr_test_case) {
     InitSharedPtr();
     UseSharedPtrReset();
 }
 
-TEST(TestSmartPointer, unique_ptr_test_case) {
+TEST(test_smart_pointer, unique_ptr_test_case) {
     InitUniquePtr();
     UseUniquePtrApi();
 }

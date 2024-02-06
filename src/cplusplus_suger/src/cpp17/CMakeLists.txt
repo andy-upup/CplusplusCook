@@ -4,11 +4,11 @@ include_directories(
 
 add_library(cpp17_lib
     STATIC
-        ${CPP14_SRCS}
+        ${CPP17_SRCS}
 )
 
 add_executable(cpp17_test_case
-    ${CPP14_SRCS}
+    ${CPP17_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/test/test_case.cpp
 )
 

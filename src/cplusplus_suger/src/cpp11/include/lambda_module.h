@@ -2,6 +2,7 @@
 #define LAMBDA_MODULE_H__
 #include <algorithm>
 #include <iostream>
+
 void SortWithLambda();
 void SortWithFunc();
 void LambdaRename();
