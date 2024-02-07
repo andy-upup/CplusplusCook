@@ -14,6 +14,7 @@ cd ${linux_build_path}
 cmake -DCMAKE_INSTALL_PREFIX=${linux_build_path} \
       -DBUILD_TEST=OFF                           \
       -DWITH_CPP_SUGER=ON                        \
+      -DWITH_ALGO=ON                             \
 ..
 
 make -j4

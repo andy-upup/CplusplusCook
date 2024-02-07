@@ -12,6 +12,10 @@ if(${WITH_CPP_SUGER})
     include(${CMAKE_SOURCE_DIR}/cmake/Cpp.cmake)
 endif()
 
+if(${WITH_ALGO})
+    include(${CMAKE_SOURCE_DIR}/cmake/Algorithm.cmake)
+endif()
+
 include_directories(
     ${GTEST_INCLUDE_DIRS}
 )

@@ -11,3 +11,6 @@ if(${WITH_CPP_SUGER})
 endif()
 
 message(STATUS, "CPP11_DIR: ${CPP11_DIR}")
+message(STATUS, "CPP14_DIR: ${CPP14_DIR}")
+message(STATUS, "CPP17_DIR: ${CPP17_DIR}")
+message(STATUS, "CPP20_DIR: ${CPP20_DIR}")

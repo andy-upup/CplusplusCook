@@ -4,7 +4,20 @@ root_path=$(cd $(dirname $0); cd ..; pwd)
 
 source ${root_path}/scripts/build_linux.sh
 
-cd ${linux_build_path}/install/bin/cplusplus_suger
-# ./gtest_sample --gtest_filter=gtest_sample.print
-# ./function --gtest_filter=cpp_suger.function
-./cpp11_test_case --gtest_filter=test11_function.function_test_case
+if [ $# != 2]; then
+    echo "Please specify execute mode! [CPP|ALGO]"
+else
+    echo "Execute mode is: $1"
+fi
+
+execute_mode=$1
+
+if [ ${execute_mode} == "CPP" ]; then
+    cd ${linux_build_path}/install/bin/cplusplus_suger
+    ./cpp11_test_case --gtest_filter=test11_function.function_test_case
+elif [ ${execute_mode} == "ALGO" ]; then
+    cd ${linux_build_path}/install/bin/algorithm
+    ./sort_test_case --gtest_filter=test_algo_sort.bubble_sort_test_case
+else
+    echo "Wrong mode! [CPP|ALGO]"
+fi
