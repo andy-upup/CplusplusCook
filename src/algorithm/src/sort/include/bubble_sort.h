@@ -3,4 +3,5 @@
 #include <iostream>
 #include <vector>
 
+void BubbleSort(std::vector<int>& vec);
 #endif
