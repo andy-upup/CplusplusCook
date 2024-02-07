@@ -4,6 +4,7 @@
 #include <tuple>
 #include <vector>
 
+#include "bind_module.h"
 #include "class_module.h"
 #include "constexpr_module.h"
 #include "function_module.h"
@@ -12,6 +13,7 @@
 #include "smart_pointer.h"
 #include "template_module.h"
 #include "tuple_module.h"
+#include "variable_parameter_module.h"
 #include "vector_module.h"
 
 TEST(test11_vector, back_test_case) {
@@ -39,7 +41,7 @@ TEST(test11_using, using_map_test_case) {
     str_map<int> mp;
 }
 
-TEST(test11_function, func_arg_test_case) {
+TEST(test11_variable_parameter, variable_parameter_test_case) {
     VairFun(4, 100, 110, 120, 130);
 }
 
@@ -107,12 +109,25 @@ TEST(test11_move_construct, move_construct_test_case) {
     second_move.Print();
 }
 
-TEST(test_smart_pointer, shared_ptr_test_case) {
+TEST(test11_smart_pointer, shared_ptr_test_case) {
     InitSharedPtr();
     UseSharedPtrReset();
 }
 
-TEST(test_smart_pointer, unique_ptr_test_case) {
+TEST(test11_smart_pointer, unique_ptr_test_case) {
     InitUniquePtr();
     UseUniquePtrApi();
+}
+
+TEST(test11_bind, bind_test_case) {
+    std::cout << BindDivision(10) << std::endl;
+    BindDisplay(10);
+}
+
+TEST(test11_function, function_test_case) {
+    FunctionSum(100, 10);
+    FunctionSumLambda(100, 10);
+    FunctionSumClass(100.f, 10.f);
+    FunctionSumClassObject(100, 10);
+    FunctionSumClassBind(100, 10);
 }
