@@ -17,7 +17,7 @@ if [ ${execute_mode} == "CPP" ]; then
     ./cpp11_test_case --gtest_filter=test11_function.function_test_case
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
-    ./sort_test_case --gtest_filter=test_algo_sort.bubble_sort_test_case
+    ./sort_test_case --gtest_filter=test_algo_sort.merge_sort_test_case
 else
     echo "Wrong mode! [CPP|ALGO]"
 fi
