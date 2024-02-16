@@ -5,8 +5,10 @@
 #include <iostream>
 
 #include "bubble_sort.h"
+#include "heap_sort.h"
 #include "insertion_sort.h"
 #include "merge_sort.h"
+#include "quick_sort.h"
 #include "selection_sort.h"
 #include "shell_sort.h"
 
@@ -63,5 +65,21 @@ TEST(test_algo_sort, merge_sort_test_case) {
     GenVec(vec, 0, 10);
     CoutVec(vec);
     MergeSort(vec);
+    CoutVec(vec);
+}
+
+TEST(test_algo_sort, quick_sort_test_case) {
+    std::vector<int> vec(10, 0);
+    GenVec(vec, 0, 10);
+    CoutVec(vec);
+    QuickSort(vec);
+    CoutVec(vec);
+}
+
+TEST(test_algo_sort, heap_sort_test_case) {
+    std::vector<int> vec(10, 0);
+    GenVec(vec, 0, 10);
+    CoutVec(vec);
+    HeapSort(vec);
     CoutVec(vec);
 }
