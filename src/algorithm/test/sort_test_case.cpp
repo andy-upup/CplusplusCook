@@ -4,13 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "bubble_sort.h"
-#include "heap_sort.h"
-#include "insertion_sort.h"
-#include "merge_sort.h"
-#include "quick_sort.h"
-#include "selection_sort.h"
-#include "shell_sort.h"
+#include "sort.h"
 
 static void GenVec(std::vector<int>& vec, const int min, const int max) {
     std::srand((unsigned)time(NULL));

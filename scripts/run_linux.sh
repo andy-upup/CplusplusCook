@@ -5,7 +5,7 @@ root_path=$(cd $(dirname $0); cd ..; pwd)
 source ${root_path}/scripts/build_linux.sh
 
 if [ $# != 2]; then
-    echo "Please specify execute mode! [CPP|ALGO]"
+    echo "Please specify execute mode! [CPP|ALGO|DP]"
 else
     echo "Execute mode is: $1"
 fi
@@ -18,6 +18,9 @@ if [ ${execute_mode} == "CPP" ]; then
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
     ./sort_test_case --gtest_filter=test_algo_sort.heap_sort_test_case
+elif [ ${execute_mode} == "DP" ]; then
+    cd ${linux_build_path}/install/bin/design_pattern
+    ./single_instance_test_case --gtest_filter=test_design_pattern.single_instance_test_case
 else
-    echo "Wrong mode! [CPP|ALGO]"
+    echo "Wrong mode! [CPP|ALGO|DP]"
 fi

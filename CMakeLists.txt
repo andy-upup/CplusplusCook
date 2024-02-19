@@ -16,6 +16,10 @@ if(${WITH_ALGO})
     include(${CMAKE_SOURCE_DIR}/cmake/Algorithm.cmake)
 endif()
 
+if(${WITH_DESIGN_PATTERN})
+    include(${CMAKE_SOURCE_DIR}/cmake/DesignPattern.cmake)
+endif()
+
 include_directories(
     ${GTEST_INCLUDE_DIRS}
 )

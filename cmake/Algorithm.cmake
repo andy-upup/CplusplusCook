@@ -1,7 +1,7 @@
 if(${WITH_ALGO})
-    set(SORT_DIR ${CMAKE_SOURCE_DIR}/src/algorithm/src/sort)
+    set(ALGO_DIR ${CMAKE_SOURCE_DIR}/src/algorithm)
 
-    aux_source_directory(${SORT_DIR}/src SORT_SRCS)
+    aux_source_directory(${ALGO_DIR}/src ALGO_SRCS)
 endif()
 
-message(STATUS, "CPP20_DIR: ${CPP20_DIR}")
+message(STATUS "ALGO_DIR: ${ALGO_DIR}")

@@ -6,6 +6,6 @@ if(${WITH_ALGO})
     add_subdirectory(algorithm)
 endif()
 
-if(${WITH_DESIGN_PATTERNS})
-    add_subdirectory(design_patterns)
+if(${WITH_DESIGN_PATTERN})
+    add_subdirectory(design_pattern)
 endif()
