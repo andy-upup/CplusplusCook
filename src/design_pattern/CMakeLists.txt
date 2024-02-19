@@ -24,10 +24,6 @@ foreach(TEST_FILE ${TEST_FILES})
         ${DESIGN_PATTERN_SRC}
         ${CMAKE_CURRENT_SOURCE_DIR}/test/${CPP_FILE}
     )
-    target_include_directories(${EXE_FILE_NAME}
-        PRIVATE
-            ${CMAKE_CURRENT_SOURCE_DIR}/include
-    )
     target_link_libraries(${EXE_FILE_NAME}
         PRIVATE
         ${GTEST_BOTH_LIBRARIES}
@@ -36,15 +32,4 @@ foreach(TEST_FILE ${TEST_FILES})
     install(TARGETS ${EXE_FILE_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/install/bin/design_pattern)
 endforeach()
 
-# add_executable(single_instance_test_case
-#     ${DESIGN_PATTERN_SRCS}
-#     ${CMAKE_CURRENT_SOURCE_DIR}/test/single_instance_test_case.cpp
-# )
-
-# target_link_libraries(single_instance_test_case
-#     PRIVATE
-#     ${GTEST_BOTH_LIBRARIES}
-# )
-
 install(TARGETS design_pattern_lib        DESTINATION ${CMAKE_INSTALL_PREFIX}/install/lib/design_pattern)
-# install(TARGETS single_instance_test_case DESTINATION ${CMAKE_INSTALL_PREFIX}/install/bin/design_pattern)
