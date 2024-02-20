@@ -9,3 +9,11 @@ endif()
 if(${WITH_DESIGN_PATTERN})
     add_subdirectory(design_pattern)
 endif()
+
+if(${WITH_EFFECTIVE})
+    add_subdirectory(effective)
+endif()
+
+if(${WITH_CONCURRENCY})
+    add_subdirectory(concurrency)
+endif()

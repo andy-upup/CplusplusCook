@@ -2,7 +2,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-add_library(design_pattern_lib
+add_library(concurrency_lib
     STATIC
         ${DESIGN_PATTERN_SRCS}
 )
@@ -16,12 +16,12 @@ foreach(TEST_FILE ${TEST_FILES})
     )
     string(REGEX REPLACE ".cpp" "" EXE_FILE_NAME ${CPP_FILE})
     string(REGEX REPLACE "_test_case" "" SRC_FILE ${CPP_FILE})
-    set(DESIGN_PATTERN_SRC ${DESIGN_PATTERN_DIR}/src/${SRC_FILE})
+    set(CONCURRENCY_SRC ${CONCURRENCY_DIR}/src/${SRC_FILE})
     message(STATUS "CPP_FILE: ${CPP_FILE}")
-    message(STATUS "DESIGN_PATTERN_SRC: ${DESIGN_PATTERN_SRC}")
+    message(STATUS "CONCURRENCY_SRC: ${CONCURRENCY_SRC}")
 
     add_executable(${EXE_FILE_NAME}
-        ${DESIGN_PATTERN_SRC}
+        ${CONCURRENCY_SRC}
         ${CMAKE_CURRENT_SOURCE_DIR}/test/${CPP_FILE}
     )
     target_link_libraries(${EXE_FILE_NAME}
@@ -29,7 +29,7 @@ foreach(TEST_FILE ${TEST_FILES})
         ${GTEST_BOTH_LIBRARIES}
         pthread
     )
-    install(TARGETS ${EXE_FILE_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/install/bin/design_pattern)
+    install(TARGETS ${EXE_FILE_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/install/bin/concurrency)
 endforeach()
 
-install(TARGETS design_pattern_lib DESTINATION ${CMAKE_INSTALL_PREFIX}/install/lib/design_pattern)
+install(TARGETS concurrency_lib DESTINATION ${CMAKE_INSTALL_PREFIX}/install/lib/concurrency)

@@ -5,7 +5,7 @@ root_path=$(cd $(dirname $0); cd ..; pwd)
 source ${root_path}/scripts/build_linux.sh
 
 if [ $# != 1 ]; then
-    echo "Please specify execute mode! [CPP|ALGO|DP]"
+    echo "Please specify execute mode! [CPP|ALGO|DP|EF]"
 else
     echo "Execute mode is: $1"
 fi
@@ -21,6 +21,9 @@ elif [ ${execute_mode} == "ALGO" ]; then
 elif [ ${execute_mode} == "DP" ]; then
     cd ${linux_build_path}/install/bin/design_pattern
     ./singleton_test_case --gtest_filter=test_design_pattern.singleton_test_case
+elif [ ${execute_mode} == "EF" ]; then
+    cd ${linux_build_path}/install/bin/effective
+    ./const_use_test_case --gtest_filter=test_effective.const_use_test_case
 else
-    echo "Wrong mode! [CPP|ALGO|DP]"
+    echo "Wrong mode! [CPP|ALGO|DP|EF]"
 fi

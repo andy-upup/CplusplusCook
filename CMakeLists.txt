@@ -20,6 +20,14 @@ if(${WITH_DESIGN_PATTERN})
     include(${CMAKE_SOURCE_DIR}/cmake/DesignPattern.cmake)
 endif()
 
+if(${WITH_EFFECTIVE})
+    include(${CMAKE_SOURCE_DIR}/cmake/Effective.cmake)
+endif()
+
+if(${WITH_CONCURRENCY})
+    include(${CMAKE_SOURCE_DIR}/cmake/Concurrency.cmake)
+endif()
+
 include_directories(
     ${GTEST_INCLUDE_DIRS}
 )

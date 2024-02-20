@@ -21,10 +21,10 @@ void LSingletonWithLock::Print() {
 // LSingletonWithStatic
 LSingletonWithStatic& LSingletonWithStatic::GetInstance() {
     /*
-    * implementing single instance through local static characteristics.
-    * static local variables are only valid within current function and cannot be accessed by other functions.
-    * static local variables are only initialized when they are called for the first time and are stored in the static storage area. 
-    * the life cycle starts from the first initialization to the end of the program.
+    * Implementing single instance through local static characteristics.
+    * Static local variables are only valid within current function and cannot be accessed by other functions.
+    * Static local variables are only initialized when they are called for the first time and are stored in the static storage area. 
+    * The life cycle starts from the first initialization to the end of the program.
     */
     static LSingletonWithStatic single;
     return single;
