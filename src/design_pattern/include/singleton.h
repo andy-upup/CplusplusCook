@@ -4,6 +4,9 @@
 #include <memory>
 #include <mutex>
 
+namespace design_pattern {
+// Static objects will be automatically destroyed when the program ends, that is, their destructors will be automatically called when main() ends.
+
 // Lazy initialization initializes only when needed.
 // Hungry initialization is initialized at the beginning of the system.
 
@@ -57,4 +60,6 @@ class HSingletonWithCallOnce {
    HSingletonWithCallOnce(const HSingletonWithCallOnce &) = delete;
    HSingletonWithCallOnce& operator=(const HSingletonWithCallOnce &) = delete;
 };
+
+} // namespace design_pattern
 #endif

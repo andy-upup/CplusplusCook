@@ -1,5 +1,7 @@
 #include "singleton.h"
 
+namespace design_pattern {
+
 // LSingletonWithLock
 static std::shared_ptr<LSingletonWithLock> g_lsingleton = nullptr;
 static std::mutex g_lmutex;
@@ -66,3 +68,5 @@ std::shared_ptr<HSingletonWithCallOnce> HSingletonWithCallOnce::GetInstance() {
 void HSingletonWithCallOnce::Print() {
     std::cout << "Instance address of HSingletonWithCallOnce is: " << this << std::endl;
 }
+
+} // namespace design_pattern

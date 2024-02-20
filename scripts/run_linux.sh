@@ -23,7 +23,7 @@ elif [ ${execute_mode} == "DP" ]; then
     ./singleton_test_case --gtest_filter=test_design_pattern.singleton_test_case
 elif [ ${execute_mode} == "EF" ]; then
     cd ${linux_build_path}/install/bin/effective
-    ./const_use_test_case --gtest_filter=test_effective.const_use_test_case
+    ./smart_pointer_store_test_case --gtest_filter=test_effective.smart_pointer_store_test_case
 else
     echo "Wrong mode! [CPP|ALGO|DP|EF]"
 fi

@@ -7,8 +7,8 @@
 #include "singleton.h"
 
 TEST(test_design_pattern, singleton_test_case) {
-    LSingletonWithLock::GetInstance()->Print();
-    LSingletonWithStatic::GetInstance().Print();
-    HSingletonWithStatic::GetInstance()->Print();
-    HSingletonWithCallOnce::GetInstance()->Print();
+    design_pattern::LSingletonWithLock::GetInstance()->Print();
+    design_pattern::LSingletonWithStatic::GetInstance().Print();
+    design_pattern::HSingletonWithStatic::GetInstance()->Print();
+    design_pattern::HSingletonWithCallOnce::GetInstance()->Print();
 }

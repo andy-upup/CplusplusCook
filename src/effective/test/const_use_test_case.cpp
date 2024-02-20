@@ -1,7 +1,5 @@
 #include <gtest/gtest.h>
-#include <time.h>
 
-#include <cstdlib>
 #include <iostream>
 
 #include "const_use.h"
