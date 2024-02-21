@@ -17,6 +17,7 @@ cmake -DCMAKE_INSTALL_PREFIX=${linux_build_path} \
       -DWITH_ALGO=OFF                            \
       -DWITH_DESIGN_PATTERN=OFF                  \
       -DWITH_EFFECTIVE=ON                        \
+      -DWITH_OTHERS=ON                           \
 ..
 
 make -j4

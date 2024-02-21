@@ -5,7 +5,7 @@ root_path=$(cd $(dirname $0); cd ..; pwd)
 source ${root_path}/scripts/build_linux.sh
 
 if [ $# != 1 ]; then
-    echo "Please specify execute mode! [CPP|ALGO|DP|EF]"
+    echo "Please specify execute mode! [CPP|ALGO|DP|EF|OTHERS]"
 else
     echo "Execute mode is: $1"
 fi
@@ -23,7 +23,10 @@ elif [ ${execute_mode} == "DP" ]; then
     ./singleton_test_case --gtest_filter=test_design_pattern.singleton_test_case
 elif [ ${execute_mode} == "EF" ]; then
     cd ${linux_build_path}/install/bin/effective
-    ./smart_pointer_store_test_case --gtest_filter=test_effective.smart_pointer_store_test_case
+    ./default_param_redefine_test_case --gtest_filter=test_effective.default_param_redefine_test_case
+elif [ ${execute_mode} == "OTHERS" ]; then
+    cd ${linux_build_path}/install/bin/others
+    ./swap_without_mem_test_case --gtest_filter=test_others.swap_without_mem_test_case
 else
-    echo "Wrong mode! [CPP|ALGO|DP|EF]"
+    echo "Wrong mode! [CPP|ALGO|DP|EF|OTHERS]"
 fi

@@ -17,3 +17,7 @@ endif()
 if(${WITH_CONCURRENCY})
     add_subdirectory(concurrency)
 endif()
+
+if(${WITH_OTHERS})
+    add_subdirectory(others)
+endif()

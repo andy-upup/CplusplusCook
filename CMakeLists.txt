@@ -28,6 +28,10 @@ if(${WITH_CONCURRENCY})
     include(${CMAKE_SOURCE_DIR}/cmake/Concurrency.cmake)
 endif()
 
+if(${WITH_OTHERS})
+    include(${CMAKE_SOURCE_DIR}/cmake/Others.cmake)
+endif()
+
 include_directories(
     ${GTEST_INCLUDE_DIRS}
 )
