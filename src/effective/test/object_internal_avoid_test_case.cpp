@@ -4,7 +4,7 @@
 
 #include "object_internal_avoid.h"
 
-TEST(test_effective, object_internal_avoid_test_case) {
+TEST(test_effective, object_internal_avoid_unit_test) {
     effective::Point upper_left_point(10, 10);
     effective::Point lower_right_point(100, 100);
     effective::RectData rect = {upper_left_point, lower_right_point};

@@ -4,7 +4,7 @@
 
 #include "hiding_avoid.h"
 
-TEST(test_effective, hiding_avoid_test_case) {
+TEST(test_effective, hiding_avoid_unit_test) {
     effective::HidingDerivedX derived_x;
     const int x = 0;
     derived_x.Mf1();     // DerivedX::Mf1()

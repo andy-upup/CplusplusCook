@@ -4,7 +4,7 @@
 
 #include "const_use.h"
 
-TEST(test_effective, const_use_test_case) {
+TEST(test_effective, const_use_unit_test) {
 /*
     char greeting[] = "Hello World!";
     // non-const pointer, non-const data

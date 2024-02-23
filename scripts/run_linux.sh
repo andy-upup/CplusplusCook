@@ -23,7 +23,7 @@ elif [ ${execute_mode} == "DP" ]; then
     ./singleton_test_case --gtest_filter=test_design_pattern.singleton_test_case
 elif [ ${execute_mode} == "EF" ]; then
     cd ${linux_build_path}/install/bin/effective
-    ./default_param_redefine_test_case --gtest_filter=test_effective.default_param_redefine_test_case
+    ./non_member_func_define_test_case --gtest_filter=test_effective.non_member_func_define_unit_test
 elif [ ${execute_mode} == "OTHERS" ]; then
     cd ${linux_build_path}/install/bin/others
     ./swap_without_mem_test_case --gtest_filter=test_others.swap_without_mem_test_case

@@ -4,7 +4,7 @@
 
 #include "default_param_redefine.h"
 
-TEST(test_effective, default_param_redefine_test_case) {
+TEST(test_effective, default_param_redefine_unit_test) {
     // effective::Shape *shape;
     effective::Shape *triangle = new effective::Triangle;
     effective::Shape *circle = new effective::Circle;
