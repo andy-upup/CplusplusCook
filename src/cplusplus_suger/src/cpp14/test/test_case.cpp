@@ -7,18 +7,18 @@
 #include "template_module.h"
 
 TEST(test14_auto, auto_test_case) {
-    std::cout << ReturnAutoInTemplate(10) << std::endl;
+    std::cout << cpp14::ReturnAutoInTemplate(10) << std::endl;
 }
 
 TEST(test14_lambda, lambda_test_case) {
-    InputAutoArg();
+    cpp14::InputAutoArg();
 }
 
 TEST(test14_template, template_test_case) {
-    std::cout << pi<int> << std::endl;
-    std::cout << pi<double> << std::endl;
+    std::cout << cpp14::pi<int> << std::endl;
+    std::cout << cpp14::pi<double> << std::endl;
 
-    TemB<double> b;
+    cpp14::TemB<double> b;
     b.t = 10;
     b.u = 20;
     std::cout << b.t << std::endl;

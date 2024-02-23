@@ -3,5 +3,9 @@
 // #include <charconv>
 #include <iostream>
 
+namespace cpp17 {
+
 void ConvertString();
+
+} // namespace cpp17
 #endif

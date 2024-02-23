@@ -3,6 +3,8 @@
 #include <iostream>
 #include <map>
 
+namespace cpp11 {
+
 template <typename T>
 using str_map = std::map<std::string, T>;
 
@@ -17,4 +19,6 @@ void Display(T t) {
 template<typename... args>
 void VarFun(args... argv) {
 }
+
+} // namespace cpp11
 #endif

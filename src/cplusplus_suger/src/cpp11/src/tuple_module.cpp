@@ -1,5 +1,7 @@
 #include "tuple_module.h"
 
+namespace cpp11 {
+
 void UseApisOfTuple() {
     std::tuple<int, char> first;
     std::tuple<int, char> second(first);
@@ -29,3 +31,5 @@ void UseApisOfTuple() {
     std::cout << "val: " << val << std::endl;
     std::cout << "str: " << str << std::endl;
 }
+
+} // namespace cpp11

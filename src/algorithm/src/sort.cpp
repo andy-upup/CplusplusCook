@@ -1,5 +1,7 @@
 #include "sort.h"
 
+namespace algo {
+
 // move large numbers to the back
 void BubbleSort(std::vector<int> &vec) {
     std::cout << __func__ << std::endl;
@@ -37,7 +39,7 @@ static void AdjustHeap(std::vector<int> &vec, int size, int index) {
 }
 
 void HeapSort(std::vector<int> &vec, int size) {
-    // if i = size / 2 - 1, 
+    // if i = size / 2 - 1,
     // left = 2 * i + 1 = size - 1,
     // right = 2 * i + 2 = size
     // build large root heap
@@ -63,7 +65,7 @@ void HeapSort(std::vector<int> &vec) {
 }
 
 ///////////////////////////////////////////////////////////////////////
-// sort the previous part, 
+// sort the previous part,
 // insert the followint number into the appropriate position in the sorting part
 void InsertionSort(std::vector<int> &vec) {
     std::cout << __func__ << std::endl;
@@ -203,3 +205,5 @@ void ShellSort(std::vector<int> &vec, const int init_gap) {
         }
     }
 }
+
+} // namespace algo

@@ -18,7 +18,7 @@
 #include "vector_module.h"
 
 TEST(test11_vector, back_unit_test) {
-    std::vector<Person> person;
+    std::vector<cpp11::Person> person;
     // auto p = Person(1);
     // person.emplace_back(std::move(p));
     std::string name = "Tom";
@@ -39,59 +39,59 @@ TEST(test11_auto_decltype, auto_decltype_unit_test) {
 }
 
 TEST(test11_using, using_map_unit_test) {
-    str_map<int> mp;
+    cpp11::str_map<int> mp;
 }
 
 TEST(test11_variable_parameter, variable_parameter_unit_test) {
-    VairFun(4, 100, 110, 120, 130);
+    cpp11::VairFun(4, 100, 110, 120, 130);
 }
 
 TEST(test11_template, variable_template_unit_test) {
-    VarFun(1, "Hello World!", 2.34);
+    cpp11::VarFun(1, "Hello World!", 2.34);
 }
 
 TEST(TestTuple, tuple_unit_test) {
-    UseApisOfTuple();
+    cpp11::UseApisOfTuple();
 }
 
 TEST(test11_class, class_unit_test) {
-    Foo a1(123);
-    Foo a2 = 123;
+    cpp11::Foo a1(123);
+    cpp11::Foo a2 = 123;
     a2.Print();
 }
 
 TEST(test11_lambda, lambda_unit_test) {
-    SortWithLambda();
-    SortWithFunc();
-    LambdaRename();
-    PassValVsRef();
+    cpp11::SortWithLambda();
+    cpp11::SortWithFunc();
+    cpp11::LambdaRename();
+    cpp11::PassValVsRef();
 }
 
 TEST(test11_constexpr, constexpr_unit_test) {
-    ReassignToReadOnlyVar();
-    InitialArray();
+    cpp11::ReassignToReadOnlyVar();
+    cpp11::InitialArray();
 }
 
 TEST(test11_reference, reference_unit_test) {
     // construct
     std::cout << "Demo1: " << std::endl;
-    Demo demo1 = GetDemo();
+    cpp11::Demo demo1 = cpp11::GetDemo();
 
     std::cout << "Demo2: " << std::endl;
-    Demo demo2 = demo1;
+    cpp11::Demo demo2 = demo1;
 
     std::cout << "Demo3: " << std::endl;
-    Demo demo3 = std::move(demo1);
+    cpp11::Demo demo3 = std::move(demo1);
 }
 
 TEST(test11_reference, lval_rval_unit_test) {
-    LvalRvalDemo demo(10);
+    cpp11::LvalRvalDemo demo(10);
     std::cout << demo.GetNum() << std::endl;
     std::cout << std::move(demo).GetNum() << std::endl;
 }
 
 TEST(test11_reference, ref_qualifier_unit_test) {
-    RefQualifierDemo demo(10, 20);
+    cpp11::RefQualifierDemo demo(10, 20);
     std::cout << demo.GetNumLvalRef() << std::endl;
     // std::cout << std::move(demo).GetNumLvalRef() << std::endl;
     // std::cout << demo.GetNumRvalRef() << std::endl;
@@ -99,38 +99,38 @@ TEST(test11_reference, ref_qualifier_unit_test) {
 }
 
 TEST(test11_forward, forward_unit_test) {
-    Func(5);
+    cpp11::Func(5);
     int val = 1;
-    Func(val);
+    cpp11::Func(val);
 }
 
 TEST(test11_move_construct, move_construct_unit_test) {
-    Second second;
-    Second second_move = std::move(second);
+    cpp11::Second second;
+    cpp11::Second second_move = std::move(second);
     second_move.Print();
 }
 
 TEST(test11_smart_pointer, shared_ptr_unit_test) {
-    InitSharedPtr();
-    UseSharedPtrReset();
+    cpp11::InitSharedPtr();
+    cpp11::UseSharedPtrReset();
 }
 
 TEST(test11_smart_pointer, unique_ptr_unit_test) {
-    InitUniquePtr();
-    UseUniquePtrApi();
+    cpp11::InitUniquePtr();
+    cpp11::UseUniquePtrApi();
 }
 
 TEST(test11_bind, bind_unit_test) {
-    std::cout << BindDivision(10) << std::endl;
-    BindDisplay(10);
+    std::cout << cpp11::BindDivision(10) << std::endl;
+    cpp11::BindDisplay(10);
 }
 
 TEST(test11_function, function_unit_test) {
-    FunctionSum(100, 10);
-    FunctionSumLambda(100, 10);
-    FunctionSumClass(100.f, 10.f);
-    FunctionSumClassObject(100, 10);
-    FunctionSumClassBind(100, 10);
+    cpp11::FunctionSum(100, 10);
+    cpp11::FunctionSumLambda(100, 10);
+    cpp11::FunctionSumClass(100.f, 10.f);
+    cpp11::FunctionSumClassObject(100, 10);
+    cpp11::FunctionSumClassBind(100, 10);
 }
 
 TEST(test11_copy_construct, copy_construct_unit_test) {

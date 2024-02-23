@@ -1,5 +1,7 @@
 #include "apply_module.h"
 
+namespace cpp17 {
+
 int GetTwoSum(int first, int second) {
     return first + second;
 }
@@ -17,3 +19,5 @@ void ApplyComputeSum(int first, int second) {
 Foo::Foo(int first, float second, int third) {
     std::cout << first << " " << second << " " << third << std::endl;
 };
+
+} // namespace cpp17

@@ -2,6 +2,8 @@
 #define LAMBDA_MODULE_H__
 #include <iostream>
 
+namespace cpp17 {
+
 // capture *this
 struct ThisSample {
     int val = 10;
@@ -14,4 +16,6 @@ struct ThisSample {
 };
 
 int GetSquare(int n);
+
+} // namespace cpp17
 #endif

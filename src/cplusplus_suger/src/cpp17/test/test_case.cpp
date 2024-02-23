@@ -13,9 +13,9 @@
 #include "variant_module.h"
 
 TEST(test17_structured_binding, structured_binding_test_case) {
-    InitPair();
-    InitVector();
-    auto[i, j] = InitTuple();
+    cpp17::InitPair();
+    cpp17::InitVector();
+    auto[i, j] = cpp17::InitTuple();
     std::cout << i << " " << j << std::endl;
 
     // structured binding pair
@@ -31,22 +31,22 @@ TEST(test17_structured_binding, structured_binding_test_case) {
 }
 
 TEST(test17_if_switch, if_switch_test_case) {
-    IfSwitch(10);
+    cpp17::IfSwitch(10);
 }
 
 TEST(test17_reference, reference_test_case) {
-    int sum = ComputeSum(1, 2, 3, 4, 5);
+    int sum = cpp17::ComputeSum(1, 2, 3, 4, 5);
     std::cout << "Sum is: " << sum << std::endl;
 
     std::string str_x{"Hello "};
     std::string str_y{"World!"};
-    std::cout << ComputeSum(str_x, str_y) << std::endl;
+    std::cout << cpp17::ComputeSum(str_x, str_y) << std::endl;
 }
 
 TEST(test17_lambda, lambda_test_case) {
-    std::cout << "Square is: " << GetSquare(10) << std::endl;
+    std::cout << "Square is: " << cpp17::GetSquare(10) << std::endl;
 
-    ThisSample sample;
+    cpp17::ThisSample sample;
     sample.val = 100;
     sample.Func();
 }
@@ -56,19 +56,19 @@ TEST(test17_string_convertion, string_convertion_test_case) {
 }
 
 TEST(test17_variant, variant_test_case) {
-    TestVariant();
+    cpp17::TestVariant();
 }
 
 TEST(test17_any, any_test_case) {
-    TestAny();
+    cpp17::TestAny();
 }
 
 TEST(test17_apply, apply_test_case) {
-    ApplyComputeSum(100, 10);
+    cpp17::ApplyComputeSum(100, 10);
 
     // use std::make_from_tuple to expand a tuple as argumens for a construct function
     auto tp = std::make_tuple(42, 3.14f, 0);
-    std::make_from_tuple<Foo>(std::move(tp));
+    std::make_from_tuple<cpp17::Foo>(std::move(tp));
 }
 
 TEST(test17_string_view, string_view_test_case) {
@@ -77,9 +77,9 @@ TEST(test17_string_view, string_view_test_case) {
 
     std::string_view stv(str.c_str(), str.size());
     std::cout << stv << std::endl;
-    TestStringView(stv);
+    cpp17::TestStringView(stv);
 }
 
 TEST(test17_as_const, as_const_test_case) {
-    TestAsConst();
+    cpp17::TestAsConst();
 }

@@ -1,5 +1,7 @@
 #include "any_module.h"
 
+namespace cpp17 {
+
 // any can store a single value of any type
 void TestAny() {
     std::any x = 1;
@@ -19,3 +21,5 @@ void TestAny() {
     x = std::string("Hello World!");
     std::cout << x.type().name() << " " << std::any_cast<std::string>(x) << std::endl;
 }
+
+} // namespace cpp17

@@ -3,6 +3,8 @@
 #include <array>
 #include <iostream>
 
+namespace cpp11 {
+
 class Type {
  public:
     constexpr Type(const char *name, int age): _name(name), _age(age) {};
@@ -21,4 +23,6 @@ class Type {
 void DisplayNoParam();
 void ReassignToReadOnlyVar();
 void InitialArray();
+
+} // namespace cpp11
 #endif

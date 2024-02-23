@@ -2,6 +2,8 @@
 #define VECTOR_MODULE_H__
 #include <iostream>
 
+namespace cpp11 {
+
 class Person {
  public:
     Person(int age) : _age(age) {
@@ -23,4 +25,6 @@ class Person {
     std::string _name;
     int _age;
 };
+
+} // namespace cpp11
 #endif

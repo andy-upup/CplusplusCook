@@ -2,6 +2,8 @@
 #define TEMPLATE_MODULE_H__
 #include <iostream>
 
+namespace cpp14 {
+
 // C++14 supports variable templates
 template<typename T>
 constexpr T pi = T(3.1415926535897932385L);
@@ -15,4 +17,6 @@ struct TemA {
 // C++14 supports alias templates
 template<typename T>
 using TemB = TemA<T, int>;
+
+} // namespace cpp14
 #endif

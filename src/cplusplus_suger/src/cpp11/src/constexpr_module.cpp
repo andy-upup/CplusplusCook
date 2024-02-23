@@ -1,5 +1,7 @@
 #include "constexpr_module.h"
 
+namespace cpp11 {
+
 // const represents read-only, but it is essentially a variable
 // void DisplayWithParam(const int x) {
 //     std::array<int, x> arr{1, 2, 3, 4, 5};
@@ -35,3 +37,5 @@ void InitialArray() {
     std::array<int, SqrtWithExpr(10)> expr_array;
     std::cout << "Size of expr_array is: " << expr_array.size() << std::endl;
 }
+
+} // namespace cpp11

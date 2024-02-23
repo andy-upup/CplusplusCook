@@ -1,5 +1,7 @@
 #include "function_module.h"
 
+namespace cpp11 {
+
 static int ComputeSumOrdInt(const int x, const int y) {
     return x + y;
 }
@@ -107,3 +109,5 @@ int FunctionSumClassBind(const int x, const int y) {
     std::cout << "Sum of " << x << " and " << y << " is: " << tem_sum << std::endl;
     return pointer_sum;
 }
+
+} // namespace cpp11

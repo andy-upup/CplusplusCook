@@ -3,5 +3,9 @@
 #include <iostream>
 #include <utility>
 
+namespace cpp17 {
+
 void TestAsConst();
+
+} // namespace cpp17
 #endif

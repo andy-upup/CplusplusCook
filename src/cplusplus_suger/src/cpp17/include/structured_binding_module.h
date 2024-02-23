@@ -4,7 +4,11 @@
 #include <tuple>
 #include <vector>
 
+namespace cpp17 {
+
 void InitPair();
 void InitVector();
 std::tuple<int, double> InitTuple();
-#endif 
+
+} // namespace cpp17
+#endif

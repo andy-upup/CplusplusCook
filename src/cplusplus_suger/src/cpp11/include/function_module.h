@@ -3,6 +3,8 @@
 #include <functional>
 #include <iostream>
 
+namespace cpp11 {
+
 int FunctionSum(const int x, const int y);
 int FunctionSumLambda(const int x, const int y);
 int FunctionSumClass(const int x, const int y);
@@ -60,4 +62,6 @@ class FunctorBind {
         return x + y;
     }
 };
+
+} // namespace cpp11
 #endif

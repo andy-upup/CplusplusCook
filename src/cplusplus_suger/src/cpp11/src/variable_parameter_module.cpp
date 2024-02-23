@@ -1,5 +1,7 @@
 #include "variable_parameter_module.h"
 
+namespace cpp11 {
+
 void VairFun(int count, ...) {
     va_list args;
     va_start(args, count);
@@ -10,3 +12,5 @@ void VairFun(int count, ...) {
     std::cout << std::endl;
     va_end(args);
 }
+
+} // namespace cpp11

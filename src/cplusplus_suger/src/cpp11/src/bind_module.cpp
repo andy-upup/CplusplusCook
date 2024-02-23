@@ -1,5 +1,7 @@
 #include "bind_module.h"
 
+namespace cpp11 {
+
 static double ComputeDivision(const double x, const double y) {
     return x / y;
 }
@@ -14,7 +16,7 @@ double BindDivision(const double x) {
     // 2 means a default argument
     auto BindComputeDivision = std::bind(ComputeDivision, std::placeholders::_1, 2);
     return BindComputeDivision(x);
-}   
+}
 
 // bind member function
 void BindDisplay(const int y) {
@@ -27,3 +29,5 @@ void BindDisplay(const int y) {
 
 // bind reference arguments
 // use std::ref to pass arguments
+
+} // namespace cpp11

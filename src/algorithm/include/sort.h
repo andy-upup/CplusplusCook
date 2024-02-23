@@ -3,6 +3,8 @@
 #include <iostream>
 #include <vector>
 
+namespace algo {
+
 void BubbleSort(std::vector<int>& vec);
 void HeapSort(std::vector<int>& vec);
 void InsertionSort(std::vector<int>& vec);
@@ -11,4 +13,5 @@ void QuickSort(std::vector<int>& vec);
 void SelectionSort(std::vector<int>& vec);
 void ShellSort(std::vector<int>& vec, const int gap);
 
+} // namespace algo
 #endif

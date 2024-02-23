@@ -2,6 +2,8 @@
 #define REFERENCE_MODULE_H__
 #include <iostream>
 
+namespace cpp11 {
+
 class First {
  public:
     First(): _num(new int(0)) {
@@ -81,4 +83,6 @@ template<typename T>
 void Func(T &&val) {
     OtherDef(std::forward<T>(val));
 }
+
+} // namespace cpp11
 #endif

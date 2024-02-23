@@ -1,5 +1,7 @@
 #include "lambda_module.h"
 
+namespace cpp11 {
+
 int g_num = 0;
 
 bool SortUp(int x, int y) {
@@ -60,3 +62,5 @@ void PassValVsRef() {
     lambda2();
     std::cout << "g_num: " << g_num << std::endl;
 }
+
+} // namespace cpp11

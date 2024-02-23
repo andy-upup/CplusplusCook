@@ -1,5 +1,7 @@
 #include "smart_pointer.h"
 
+namespace cpp11 {
+
 static void DeleteInt(int *ptr) {
     delete []ptr;
 }
@@ -94,3 +96,5 @@ void UseUniquePtrApi() {
     p3.reset(p2);
     std::cout << "p3 value is: " << *p3 << std::endl;
 }
+
+} // namespace cpp11

@@ -3,5 +3,9 @@
 #include <cstdarg>
 #include <iostream>
 
+namespace cpp11 {
+
 void VairFun(int count, ...);
+
+} // namespace cpp11
 #endif
