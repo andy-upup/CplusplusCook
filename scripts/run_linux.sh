@@ -14,7 +14,7 @@ execute_mode=$1
 
 if [ ${execute_mode} == "CPP" ]; then
     cd ${linux_build_path}/install/bin/cplusplus_suger
-    ./cpp11_test_case --gtest_filter=test11_function.function_test_case
+    ./cpp11_test_case --gtest_filter=test11_copy_construct.copy_construct_unit_test
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
     ./sort_test_case --gtest_filter=test_algo_sort.heap_sort_test_case
