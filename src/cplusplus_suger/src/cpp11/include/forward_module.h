@@ -1,6 +1,7 @@
 #ifndef FORWARD_MODULE_H__
 #define FORWARD_MODULE_H__
 #include <iostream>
+#include <memory>
 #include <vector>
 
 namespace cpp11 {
@@ -46,21 +47,15 @@ class IntSegment : public Segment {
 class MsgHolder {
  public:
     MsgHolder() = default;
-    ~MsgHolder() {
-        while (segs_.size() > 0) {
-            Segment *seg = segs_.back();
-            segs_.pop_back();
-            delete seg;
-        }
-    }
+    ~MsgHolder() = default;
 
     template<typename T>
     void Add(T&& msg) {
-        segs_.push_back(new StringSegment(std::forward<T>(msg)));
+        segs_.push_back(std::make_shared<StringSegment>(std::forward<T>(msg)));
     }
 
     void Add(int value) {
-        segs_.push_back(new IntSegment(value));
+        segs_.push_back(std::make_shared<IntSegment>(value));
     }
 
     template<typename T, typename... Args>
@@ -77,7 +72,7 @@ class MsgHolder {
         return os;
     }
  private:
-    std::vector<Segment*> segs_;
+    std::vector<std::shared_ptr<Segment>> segs_;
 };
 
 inline std::ostream& operator<<(std::ostream& os, const MsgHolder& holder) {
