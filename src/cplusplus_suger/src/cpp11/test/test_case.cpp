@@ -8,6 +8,7 @@
 #include "class_module.h"
 #include "constexpr_module.h"
 #include "construct_func.h"
+#include "forward_module.h"
 #include "function_module.h"
 #include "lambda_module.h"
 #include "reference_module.h"
@@ -48,6 +49,7 @@ TEST(test11_variable_parameter, variable_parameter_unit_test) {
 
 TEST(test11_template, variable_template_unit_test) {
     cpp11::VarFun(1, "Hello World!", 2.34);
+    cpp11::Executor(cpp11::ComputeSum, 10, 100);
 }
 
 TEST(TestTuple, tuple_unit_test) {
@@ -98,7 +100,7 @@ TEST(test11_reference, ref_qualifier_unit_test) {
     std::cout << std::move(demo).GetNumRvalRef() << std::endl;
 }
 
-TEST(test11_forward, forward_unit_test) {
+TEST(test11_reference, forward_unit_test) {
     cpp11::Func(5);
     int val = 1;
     cpp11::Func(val);
@@ -151,4 +153,21 @@ TEST(test11_copy_construct, copy_construct_unit_test) {
         std::cout << copy_vec[i] << " ";
     }
     std::cout << std::endl;
+}
+
+TEST(test11_forward, forward_unit_test) {
+    cpp11::MsgHolder holder;
+    std::string lvalue_test("Lvalue test.");
+    std::string rvalue_test("Rvalue_test.");
+
+    // lvalue_test: lvalue reference
+    // rvalue_test: rvalue reference
+    holder.Add(2, " test of ", lvalue_test, " and ", std::move(rvalue_test));
+
+    // copy-construct, output: "lvalue_test: Lvalue test."
+    std::cout << "lvalue_test: " << lvalue_test << std::endl;
+    // move-construct, output: "rvalue_test:"
+    std::cout << "rvalue_test: " << rvalue_test << std::endl;
+    // output: "holder: 2 test of Lvalue test. and Rvalue_test."
+    std::cout << "holder: " << holder << std::endl;
 }

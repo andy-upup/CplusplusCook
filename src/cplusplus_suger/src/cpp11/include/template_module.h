@@ -20,5 +20,13 @@ template<typename... args>
 void VarFun(args... argv) {
 }
 
+template <typename F, typename... Args>
+void Executor(const F func, Args&&... args) {
+    int result = func(args...);
+    std::cout << "Executor result is: " << result << std::endl;
+}
+
+int ComputeSum(const int x, const int y);
+
 } // namespace cpp11
 #endif
