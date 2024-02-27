@@ -4,14 +4,14 @@
 
 namespace effective {
 
-// Have assignment operators return a reference to *this 
+// Have assignment operators return a reference to *this
 class Widget {
  public:
-    Widget& operator=(const Widget &rhs) {
+    Widget& operator=(const Widget& rhs) {
         return *this;
     }
 
-    Widget& operator+=(const Widget &rhs) {
+    Widget& operator+=(const Widget& rhs) {
         this->num_ += rhs.num_;
         return *this;
     }

@@ -2,7 +2,7 @@
 
 namespace effective {
 
-void CallLog(const std::string &str) {
+void CallLog(const std::string& str) {
     std::cout << str << std::endl;
 }
 

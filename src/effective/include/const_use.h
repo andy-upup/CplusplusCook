@@ -6,7 +6,7 @@ namespace effective {
 
 class TextBlock {
  public:
-    TextBlock(const std::string &str) {
+    TextBlock(const std::string& str) {
         text_ = str;
         title_ = "";
     }
@@ -35,7 +35,7 @@ class TextBlock {
     void ChangeTitle() const {
         title_ = text_;
     }
-    
+
     std::string GetTitle() const {
         return title_;
     }
@@ -46,7 +46,7 @@ class TextBlock {
     mutable std::string title_;
 };
 
-void Print(const TextBlock &text_block);
+void Print(const TextBlock& text_block);
 
 } // namespace effective
 #endif

@@ -28,7 +28,7 @@ struct RectData {
 
 class Rectangle {
  public:
-    Rectangle(std::shared_ptr<RectData> &rect) : rect_(rect) {}
+    Rectangle(std::shared_ptr<RectData>& rect) : rect_(rect) {}
     // “handles” to object internals
     // Expose internal members to users.
     // Users can modify internal data through references.

@@ -10,8 +10,8 @@ namespace effective {
 class ABEntry {
  public:
     ABEntry();
-    ABEntry(const std::string &name, const std::string &address);
-    ABEntry(const std::string &name, const std::string &address, const int phone);
+    ABEntry(const std::string& name, const std::string& address);
+    ABEntry(const std::string& name, const std::string& address, const int phone);
  private:
     std::string name_;
     std::string address_;

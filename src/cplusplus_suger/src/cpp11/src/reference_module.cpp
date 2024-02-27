@@ -7,11 +7,11 @@ Demo GetDemo() {
     return Demo();
 }
 
-void OtherDef(int &val) {
+void OtherDef(int& val) {
     std::cout << "input: " << val << " is lval!" << std::endl;
 }
 
-void OtherDef(const int &val) {
+void OtherDef(const int& val) {
     std::cout << "input: " << val << " is rval!" << std::endl;
 }
 

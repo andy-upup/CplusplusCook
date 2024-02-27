@@ -18,8 +18,8 @@ class LSingletonWithLock {
    void Print();
  private:
    LSingletonWithLock() {};
-   LSingletonWithLock(const LSingletonWithLock &) = delete;
-   LSingletonWithLock& operator=(const LSingletonWithLock &) = delete;
+   LSingletonWithLock(const LSingletonWithLock&) = delete;
+   LSingletonWithLock& operator=(const LSingletonWithLock&) = delete;
 };
 
 // lazy initialization with local static
@@ -30,8 +30,8 @@ class LSingletonWithStatic {
  private:
    LSingletonWithStatic() {};
    ~LSingletonWithStatic() {};
-   LSingletonWithStatic(const LSingletonWithStatic &) = delete;
-   LSingletonWithStatic& operator=(const LSingletonWithStatic &) = delete;
+   LSingletonWithStatic(const LSingletonWithStatic&) = delete;
+   LSingletonWithStatic& operator=(const LSingletonWithStatic&) = delete;
 };
 
 // hungray initialization
@@ -43,8 +43,8 @@ class HSingletonWithStatic {
  private:
    HSingletonWithStatic() {};
    ~HSingletonWithStatic() {};
-   HSingletonWithStatic(const HSingletonWithStatic &) = delete;
-   HSingletonWithStatic& operator=(const HSingletonWithStatic &) = delete;
+   HSingletonWithStatic(const HSingletonWithStatic&) = delete;
+   HSingletonWithStatic& operator=(const HSingletonWithStatic&) = delete;
  private:
    static HSingletonWithStatic *singleton_;
 };
@@ -57,8 +57,8 @@ class HSingletonWithCallOnce {
    void Print();
  private:
    HSingletonWithCallOnce() {};
-   HSingletonWithCallOnce(const HSingletonWithCallOnce &) = delete;
-   HSingletonWithCallOnce& operator=(const HSingletonWithCallOnce &) = delete;
+   HSingletonWithCallOnce(const HSingletonWithCallOnce&) = delete;
+   HSingletonWithCallOnce& operator=(const HSingletonWithCallOnce&) = delete;
 };
 
 } // namespace design_pattern
