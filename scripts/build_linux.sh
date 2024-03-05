@@ -14,7 +14,7 @@ cd ${linux_build_path}
 cmake -DCMAKE_INSTALL_PREFIX=${linux_build_path} \
       -DBUILD_TEST=OFF                           \
       -DWITH_CPP_SUGER=ON                        \
-      -DWITH_ALGO=OFF                            \
+      -DWITH_ALGO=ON                             \
       -DWITH_DESIGN_PATTERN=OFF                  \
       -DWITH_EFFECTIVE=ON                        \
       -DWITH_OTHERS=ON                           \

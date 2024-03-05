@@ -22,7 +22,7 @@ static void CoutVec(std::vector<int>& vec) {
     std::cout << std::endl;
 }
 
-TEST(test_algo_sort, bubble_sort_test_case) {
+TEST(test_algo_sort, bubble_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -30,7 +30,7 @@ TEST(test_algo_sort, bubble_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, selection_sort_test_case) {
+TEST(test_algo_sort, selection_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -38,7 +38,7 @@ TEST(test_algo_sort, selection_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, insertion_sort_test_case) {
+TEST(test_algo_sort, insertion_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -46,7 +46,7 @@ TEST(test_algo_sort, insertion_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, shell_sort_test_case) {
+TEST(test_algo_sort, shell_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -54,7 +54,7 @@ TEST(test_algo_sort, shell_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, merge_sort_test_case) {
+TEST(test_algo_sort, merge_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -62,7 +62,7 @@ TEST(test_algo_sort, merge_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, quick_sort_test_case) {
+TEST(test_algo_sort, quick_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
@@ -70,7 +70,7 @@ TEST(test_algo_sort, quick_sort_test_case) {
     CoutVec(vec);
 }
 
-TEST(test_algo_sort, heap_sort_test_case) {
+TEST(test_algo_sort, heap_sort_unit_test) {
     std::vector<int> vec(10, 0);
     GenVec(vec, 0, 10);
     CoutVec(vec);
