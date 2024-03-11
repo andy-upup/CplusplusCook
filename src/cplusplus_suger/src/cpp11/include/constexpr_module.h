@@ -7,16 +7,16 @@ namespace cpp11 {
 
 class Type {
  public:
-    constexpr Type(const char *name, int age): _name(name), _age(age) {};
+    constexpr Type(const char *name, int age): name_(name), age_(age) {};
     constexpr const char* GetName() {
-        return _name;
+        return name_;
     };
     constexpr int GetAge() {
-        return _age;
+        return age_;
     };
  private:
-    const char *_name;
-    int _age;
+    const char *name_;
+    int age_;
 };
 
 // void DisplayWithParam(const int x);

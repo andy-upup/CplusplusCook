@@ -19,13 +19,27 @@
 #include "vector_module.h"
 
 TEST(test11_vector, back_unit_test) {
-    std::vector<cpp11::Person> person;
-    // auto p = Person(1);
-    // person.emplace_back(std::move(p));
-    std::string name = "Tom";
-    person.emplace_back(name, 2);
+    std::vector<cpp11::Back> box_a;
+    cpp11::Back back_a(1);
+    box_a.push_back(back_a);
+    std::cout << "---------------" << std::endl;
 
-    // person.push_back(p);
+    std::vector<cpp11::Back> box_b;
+    box_b.push_back(cpp11::Back(2));
+    std::cout << "---------------" << std::endl;
+
+    std::vector<cpp11::Back> box_c;
+    cpp11::Back back_c(3);
+    box_c.emplace_back(back_c);
+    std::cout << "---------------" << std::endl;
+
+    std::vector<cpp11::Back> box_d;
+    box_d.emplace_back(cpp11::Back(4));
+    std::cout << "---------------" << std::endl;
+
+    std::vector<cpp11::Back> box_e;
+    box_e.emplace_back(5);
+    std::cout << "---------------" << std::endl;
 }
 
 TEST(test11_auto_decltype, auto_decltype_unit_test) {

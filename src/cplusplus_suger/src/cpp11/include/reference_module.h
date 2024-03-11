@@ -6,73 +6,73 @@ namespace cpp11 {
 
 class First {
  public:
-    First(): _num(new int(0)) {
+    First(): num_(new int(0)) {
         std::cout << "First construct!" << std::endl;
     }
-    First(First&& first): _num(first._num) {
-        first._num = NULL;
+    First(First&& first): num_(first.num_) {
+        first.num_ = NULL;
         std::cout << "First move construct!" << std::endl;
     }
  private:
-    int *_num;
+    int *num_;
 };
 
 class Second {
  public:
-    Second(): _first() {
+    Second(): first_() {
         std::cout << "Second construct!" << std::endl;
     }
-    Second(Second&& second): _first(std::move(second._first)) {
+    Second(Second&& second): first_(std::move(second.first_)) {
         std::cout << "Second move construct!" << std::endl;
     }
     void Print() {
         std::cout << "Second hello world!" << std::endl;
     }
  private:
-    First _first;
+    First first_;
 };
 
 class LvalRvalDemo {
  public:
-    LvalRvalDemo(int num): _num(num) {}
+    LvalRvalDemo(int num): num_(num) {}
     int GetNum() {
-        return this->_num;
+        return this->num_;
     }
  private:
-    int _num;
+    int num_;
 };
 
 class RefQualifierDemo {
  public:
-    RefQualifierDemo(int lnum, int rnum): _lnum(lnum), _rnum(rnum) {}
+    RefQualifierDemo(int lnum, int rnum): lnum_(lnum), rnum_(rnum) {}
     int GetNumLvalRef() & {
-        return this->_lnum;
+        return this->lnum_;
     }
     int GetNumRvalRef() && {
-        return this->_rnum;
+        return this->rnum_;
     }
  private:
-    int _lnum;
-    int _rnum;
+    int lnum_;
+    int rnum_;
 };
 
 class Demo {
  public:
-    Demo(): _num(new int(0)) {
+    Demo(): num_(new int(0)) {
         std::cout << "Construct!" << std::endl;
     }
-    Demo(const Demo& demo): _num(new int(*demo._num)) {
+    Demo(const Demo& demo): num_(new int(*demo.num_)) {
         std::cout << "Copy-construct!" << std::endl;
     }
-    Demo(Demo&& demo): _num(demo._num) {
-        demo._num = NULL;
+    Demo(Demo&& demo): num_(demo.num_) {
+        demo.num_ = NULL;
         std::cout << "Move-construct!" << std::endl;
     }
     ~Demo() {
         std::cout << "Destruct!" << std::endl;
     }
  private:
-    int *_num;
+    int *num_;
 };
 
 Demo GetDemo();
