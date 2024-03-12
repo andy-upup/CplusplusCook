@@ -185,3 +185,10 @@ TEST(test11_forward, forward_unit_test) {
     // output: "holder: 2 test of Lvalue test. and Rvalue_test."
     std::cout << "holder: " << holder << std::endl;
 }
+
+TEST(test11_forward, forward_easy_unit_test) {
+    int x = 1;
+    cpp11::TestForward(x);
+    std::cout << "==========" << std::endl;
+    cpp11::TestForward(std::move(x));
+}

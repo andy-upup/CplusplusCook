@@ -79,5 +79,25 @@ inline std::ostream& operator<<(std::ostream& os, const MsgHolder& holder) {
     return holder.Output(os);
 }
 
+template<typename T>
+static void Print(T& t) {
+    std::cout << "Lvalue ref." << std::endl;
+}
+
+template<typename T>
+static void Print(T&& t) {
+    std::cout << "Rvalue ref." << std::endl;
+}
+
+template<typename T>
+void TestForward(T&& v) {
+    // v is lvalue, always call Print(T& t)
+    Print(v);
+    // Determined by input parameters
+    Print(std::forward<T>(v));
+    // v is rvalue, always call Print(T&& t)
+    Print(std::move(v));
+}
+
 } // namespace cpp11
 #endif
