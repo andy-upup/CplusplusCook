@@ -10,6 +10,7 @@
 #include "construct_func.h"
 #include "forward_module.h"
 #include "function_module.h"
+#include "heap_module.h"
 #include "lambda_module.h"
 #include "reference_module.h"
 #include "smart_pointer.h"
@@ -191,4 +192,13 @@ TEST(test11_forward, forward_easy_unit_test) {
     cpp11::TestForward(x);
     std::cout << "==========" << std::endl;
     cpp11::TestForward(std::move(x));
+}
+
+TEST(test11_heap, heap_unit_test) {
+    std::vector<int> vec{1, 3, 2, 4, 7};
+    cpp11::TestMaxHeap(vec);
+    cpp11::TestMinHeap(vec);
+
+    std::vector<std::pair<int, int>> pair_vec{{1, 10}, {3, 20}, {2, 15}, {4, 7}, {7, 30}};
+    cpp11::TestMaxHeap(pair_vec);
 }
