@@ -24,5 +24,23 @@ class DefaultCopy {
     std::vector<int> vec_;
 };
 
+class Copyable {
+public:
+    Copyable() {
+        std::cout << "Construct." << std::endl;
+    }
+    Copyable(const Copyable& o) {
+        std::cout << "Copy-construct." << std::endl;
+    }
+    Copyable(const Copyable&& o) {
+        std::cout << "Move-construct." << std::endl;
+    }
+    void Print() {
+        std::cout << "Hello World!" << std::endl;
+    }
+};
+
+Copyable ReturnRvalue();
+
 } // namespace cpp11
 #endif

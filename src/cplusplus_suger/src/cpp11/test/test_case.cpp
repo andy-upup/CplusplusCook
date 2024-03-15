@@ -170,6 +170,11 @@ TEST(test11_copy_construct, copy_construct_unit_test) {
     std::cout << std::endl;
 }
 
+TEST(test11_copy_construct, copy_times_unit_test) {
+    cpp11::Copyable obj = cpp11::ReturnRvalue();
+    obj.Print();
+}
+
 TEST(test11_forward, forward_unit_test) {
     cpp11::MsgHolder holder;
     std::string lvalue_test("Lvalue test.");

@@ -2,4 +2,8 @@
 
 namespace cpp11 {
 
+Copyable ReturnRvalue() {
+    return Copyable();
+}
+
 } // namespace cpp11
