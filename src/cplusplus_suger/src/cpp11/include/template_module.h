@@ -16,10 +16,6 @@ void Display(T t) {
     std::cout << t << std::endl;
 }
 
-template<typename... args>
-void VarFun(args... argv) {
-}
-
 template <typename F, typename... Args>
 void Executor(const F func, Args&&... args) {
     int result = func(args...);

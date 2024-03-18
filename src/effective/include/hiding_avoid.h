@@ -6,10 +6,10 @@ namespace effective {
 class HidingBase {
  public:
     virtual void Mf1() = 0;
-    virtual void Mf1(int x) { std::cout << "Base::Mf1(int)" << std::endl; }
+    virtual void Mf1(int x) { std::cout << "Base::Mf1(int): " << x << std::endl; }
     virtual void Mf2() { std::cout << "Base::Mf2()" << std::endl; }
     void Mf3() { std::cout << "Base::Mf3()" << std::endl; }
-    void Mf3(double x) { std::cout << "Base::Mf3(double)" << std::endl; }
+    void Mf3(double x) { std::cout << "Base::Mf3(double): " << x << std::endl; }
 };
 
 class HidingDerivedX : public HidingBase {

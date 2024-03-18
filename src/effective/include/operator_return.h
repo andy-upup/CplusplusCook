@@ -8,6 +8,7 @@ namespace effective {
 class Widget {
  public:
     Widget& operator=(const Widget& rhs) {
+        this->num_ = rhs.num_;
         return *this;
     }
 

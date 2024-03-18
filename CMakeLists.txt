@@ -8,6 +8,7 @@ endif()
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O0")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra -fno-elide-constructors")
+add_definitions(-O0)
 
 find_package(GTest REQUIRED)
 

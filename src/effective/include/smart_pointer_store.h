@@ -5,8 +5,8 @@
 
 namespace effective {
 
-class WidgetSp {
-
+struct WidgetSp {
+    int val_;
 };
 
 inline int Priority() {

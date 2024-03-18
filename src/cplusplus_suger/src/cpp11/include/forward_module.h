@@ -81,12 +81,12 @@ inline std::ostream& operator<<(std::ostream& os, const MsgHolder& holder) {
 
 template<typename T>
 static void Print(T& t) {
-    std::cout << "Lvalue ref." << std::endl;
+    std::cout << "Lvalue ref: " << t << std::endl;
 }
 
 template<typename T>
 static void Print(T&& t) {
-    std::cout << "Rvalue ref." << std::endl;
+    std::cout << "Rvalue ref: " << t << std::endl;
 }
 
 template<typename T>

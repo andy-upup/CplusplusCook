@@ -11,6 +11,7 @@ public:
     void Print();
 private:
     Foo(const Foo &);
+    int val_;
 };
 
 } // namespace cpp11

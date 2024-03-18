@@ -63,7 +63,6 @@ TEST(test11_variable_parameter, variable_parameter_unit_test) {
 }
 
 TEST(test11_template, variable_template_unit_test) {
-    cpp11::VarFun(1, "Hello World!", 2.34);
     cpp11::Executor(cpp11::ComputeSum, 10, 100);
 }
 

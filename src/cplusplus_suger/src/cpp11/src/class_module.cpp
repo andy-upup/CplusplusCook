@@ -2,11 +2,12 @@
 
 namespace cpp11 {
 
-Foo::Foo(int input) {
-    std::cout << "Construct function: " << input << std::endl;
+Foo::Foo(int val) : val_(val) {
+    std::cout << "Construct function: " << val << std::endl;
 }
 
 Foo::Foo(const Foo& input) {
+    val_ = input.val_;
     std::cout << "Copy-construct function." << std::endl;
 }
 
