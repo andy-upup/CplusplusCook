@@ -150,23 +150,25 @@ TEST(test11_function, function_unit_test) {
 }
 
 TEST(test11_copy_construct, copy_construct_unit_test) {
-    const int val = 100;
-    const std::string str = "Hello World!";
-    const std::vector<int> vec(10, 9);
-    cpp11::DefaultCopy defalut_obj(val, str, vec);
+    // const int val = 100;
+    // const std::string str = "Hello World!";
+    // const std::vector<int> vec(10, 9);
+    // cpp11::DefaultCopyClass defalut_obj(val, str, vec);
 
-    cpp11::DefaultCopy copy_obj(defalut_obj);
-    int copy_val = copy_obj.GetVal();
-    std::string copy_str = copy_obj.GetStr();
-    std::vector<int> copy_vec = copy_obj.GetVec();
+    // cpp11::DefaultCopyClass copy_obj(defalut_obj);
+    // int copy_val = copy_obj.GetVal();
+    // std::string copy_str = copy_obj.GetStr();
+    // std::vector<int> copy_vec = copy_obj.GetVec();
 
-    std::cout << "copy_val: " << copy_val << std::endl;
-    std::cout << "copy_str: " << copy_str << std::endl;
-    std::cout << "copy_vec: ";
-    for (int i = 0; i < (int)copy_vec.size(); ++i) {
-        std::cout << copy_vec[i] << " ";
-    }
-    std::cout << std::endl;
+    // std::cout << "copy_val: " << copy_val << std::endl;
+    // std::cout << "copy_str: " << copy_str << std::endl;
+    // std::cout << "copy_vec: ";
+    // for (int i = 0; i < (int)copy_vec.size(); ++i) {
+    //     std::cout << copy_vec[i] << " ";
+    // }
+    // std::cout << std::endl;
+
+    cpp11::TestDefaultCopyConstruct();
 }
 
 TEST(test11_copy_construct, copy_times_unit_test) {
