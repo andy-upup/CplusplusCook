@@ -35,6 +35,6 @@ TEST(test_algo_graph, knn_unit_test) {
     dag.AddEdge(2, 3, 0.1);
     dag.AddEdge(2, 7, 0.3);
     dag.AddEdge(2, 9, 0.5);
-    dag.BuildGraph(3);
+    dag.BuildGraph(3, true);
     dag.PrintGraph();
 }

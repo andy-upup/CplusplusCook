@@ -2,6 +2,10 @@
 
 namespace algo {
 
+static bool cmp(const std::pair<int, float>& a, const std::pair<int, float>& b) {
+    return a.second > b.second;
+}
+
 void Dag::AddNode(int node) {
     if (graph_.find(node) == graph_.end()) {
         graph_[node] = std::vector<int>();
@@ -50,23 +54,25 @@ void DaGraph::AddEdge(
     edges_.emplace_back(source, target, weight);
 }
 
-void DaGraph::BuildGraph(const int limit_num) {
+// Directly emplace_back the edge, if the quantity exceeds the limit,
+// delete the one with the smallest weight.
+void DaGraph::BuildGraph(const int limit_num, const bool is_heap) {
     if (edges_.empty()) {
         return;
     }
     for (auto& edge: edges_) {
         const int key = edge.source_;
-        if (graph_.find(key) != graph_.end()) {
-            graph_[key].emplace_back(edge.target_, edge.weight_);
-            if ((int)graph_[key].size() == limit_num + 1) {
-                std::sort(graph_[key].begin(), graph_[key].end(),
-                    [](const std::pair<int, float>& a, const std::pair<int, float>& b) {
-                        return a.second > b.second;}
-                );
-                graph_[key].pop_back();
+        graph_[key].emplace_back(edge.target_, edge.weight_);
+        if (is_heap) {
+            std::push_heap(graph_[key].begin(), graph_[key].end(), cmp);
+        }
+        if ((int)graph_[key].size() == limit_num + 1) {
+            if (is_heap) {
+                std::pop_heap(graph_[key].begin(), graph_[key].end(), cmp);
+            } else {
+                std::sort(graph_[key].begin(), graph_[key].end(), cmp);
             }
-        } else {
-            graph_[key].emplace_back(edge.target_, edge.weight_);
+            graph_[key].pop_back();
         }
     }
 }

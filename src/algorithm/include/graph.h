@@ -39,7 +39,7 @@ struct Node {
 class DaGraph {
  public:
    void AddEdge(const int source, const int target, const float weight);
-   void BuildGraph(const int limit_num);
+   void BuildGraph(const int limit_num, const bool is_heap);
    void PrintGraph();
  private:
    std::unordered_map<int, std::vector<std::pair<int, float>>> graph_;
