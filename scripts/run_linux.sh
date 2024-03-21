@@ -17,7 +17,7 @@ if [ ${execute_mode} == "CPP" ]; then
     ./cpp11_test_case --gtest_filter=test11_vector.size_capacity_unit_test
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
-    ./graph_test_case --gtest_filter=test_algo_graph.path_find_unit_test
+    ./graph_test_case --gtest_filter=test_algo_graph.knn_unit_test
 elif [ ${execute_mode} == "DP" ]; then
     cd ${linux_build_path}/install/bin/design_pattern
     ./singleton_test_case --gtest_filter=test_design_pattern.singleton_test_case

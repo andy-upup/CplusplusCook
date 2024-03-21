@@ -1,5 +1,6 @@
 #ifndef GRAPH_H__
 #define GRAPH_H__
+#include <algorithm>
 #include <iostream>
 #include <unordered_map>
 #include <vector>
@@ -37,11 +38,11 @@ struct Node {
 
 class DaGraph {
  public:
-   void AddNode(const int id);
    void AddEdge(const int source, const int target, const float weight);
-
+   void BuildGraph(const int limit_num);
+   void PrintGraph();
  private:
-   std::unordered_map<int, Node> nodes_;
+   std::unordered_map<int, std::vector<std::pair<int, float>>> graph_;
    std::vector<Edge> edges_;
 };
 

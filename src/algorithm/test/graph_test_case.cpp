@@ -24,3 +24,17 @@ TEST(test_algo_graph, path_find_unit_test) {
         std::cout << std::endl;
     }
 }
+
+TEST(test_algo_graph, knn_unit_test) {
+    algo::DaGraph dag;
+    dag.AddEdge(1, 2, 0.5);
+    dag.AddEdge(1, 3, 0.6);
+    dag.AddEdge(1, 4, 0.7);
+    dag.AddEdge(1, 5, 0.9);
+    dag.AddEdge(2, 1, 0.8);
+    dag.AddEdge(2, 3, 0.1);
+    dag.AddEdge(2, 7, 0.3);
+    dag.AddEdge(2, 9, 0.5);
+    dag.BuildGraph(3);
+    dag.PrintGraph();
+}
