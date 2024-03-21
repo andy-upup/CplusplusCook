@@ -44,6 +44,10 @@ TEST(test11_vector, back_unit_test) {
     std::cout << "---------------" << std::endl;
 }
 
+TEST(test11_vector, size_capacity_unit_test) {
+    cpp11::VectorSizeTest();
+}
+
 TEST(test11_auto_decltype, auto_decltype_unit_test) {
     int n = 10;
     int &r1 = n;

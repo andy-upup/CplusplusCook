@@ -14,7 +14,7 @@ execute_mode=$1
 
 if [ ${execute_mode} == "CPP" ]; then
     cd ${linux_build_path}/install/bin/cplusplus_suger
-    ./cpp11_test_case --gtest_filter=test11_virtual.virtual_unit_test
+    ./cpp11_test_case --gtest_filter=test11_vector.size_capacity_unit_test
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
     ./graph_test_case --gtest_filter=test_algo_graph.path_find_unit_test

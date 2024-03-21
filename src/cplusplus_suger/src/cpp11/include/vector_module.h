@@ -1,6 +1,7 @@
 #ifndef VECTOR_MODULE_H__
 #define VECTOR_MODULE_H__
 #include <iostream>
+#include <vector>
 
 namespace cpp11 {
 
@@ -34,6 +35,8 @@ class Back {
  private:
     int i_;
 };
+
+void VectorSizeTest();
 
 } // namespace cpp11
 #endif
