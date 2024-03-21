@@ -18,6 +18,7 @@
 #include "tuple_module.h"
 #include "variable_parameter_module.h"
 #include "vector_module.h"
+#include "virtual_module.h"
 
 TEST(test11_vector, back_unit_test) {
     std::vector<cpp11::Back> box_a;
@@ -74,6 +75,34 @@ TEST(test11_class, class_unit_test) {
     cpp11::Foo a1(123);
     cpp11::Foo a2 = 123;
     a2.Print();
+
+    cpp11::DerivedVirtualTest derived;
+    cpp11::DerivedVirtualTest* pderived = &derived;
+    cpp11::DerivedVirtualTest* pbase = &derived;
+    derived.PrintClassName();
+    derived.Print();
+    pderived->PrintClassName();
+    pderived->Print();
+    pbase->PrintClassName();
+    pbase->Print();
+}
+
+TEST(test11_virtual, virtual_unit_test) {
+    std::cout << "sizeof(cpp11::CNull):  " << sizeof(cpp11::CNull) << std::endl;
+    std::cout << "sizeof(cpp11::CNull2): " << sizeof(cpp11::CNull2) << std::endl;
+    std::cout << "sizeof(cpp11::COneMember): " << sizeof(cpp11::COneMember) << std::endl;
+    std::cout << "sizeof(cpp11::CTwoMember): " << sizeof(cpp11::CTwoMember) << std::endl;
+    std::cout << "sizeof(cpp11::CThreeMember): " << sizeof(cpp11::CThreeMember) << std::endl;
+    std::cout << "sizeof(cpp11::CComplex): " << sizeof(cpp11::CComplex) << std::endl;
+    std::cout << "sizeof(cpp11::CVeryComplex): " << sizeof(cpp11::CVeryComplex) << std::endl;
+    std::cout << "sizeof(cpp11::CVTwoMember): " << sizeof(cpp11::CVTwoMember) << std::endl;
+    std::cout << "sizeof(cpp11::CVComplex): " << sizeof(cpp11::CVComplex) << std::endl;
+    std::cout << "sizeof(cpp11::CStaticNull): " << sizeof(cpp11::CStaticNull) << std::endl;
+    std::cout << "sizeof(cpp11::CVirtualNull): " << sizeof(cpp11::CVirtualNull) << std::endl;
+    std::cout << "sizeof(cpp11::CVirtualA): " << sizeof(cpp11::CVirtualA) << std::endl;
+    std::cout << "sizeof(cpp11::CVirtualB): " << sizeof(cpp11::CVirtualB) << std::endl;
+    std::cout << "sizeof(cpp11::CPureVirtual): " << sizeof(cpp11::CPureVirtual) << std::endl;
+    std::cout << "sizeof(cpp11::CPureVirtualA): " << sizeof(cpp11::CPureVirtualA) << std::endl;
 }
 
 TEST(test11_lambda, lambda_unit_test) {
