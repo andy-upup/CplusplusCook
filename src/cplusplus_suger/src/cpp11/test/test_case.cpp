@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "bind_module.h"
+#include "cast_module.h"
 #include "class_module.h"
 #include "constexpr_module.h"
 #include "construct_func.h"
@@ -240,4 +241,8 @@ TEST(test11_heap, heap_unit_test) {
 
     std::vector<std::pair<int, int>> pair_vec{{1, 10}, {3, 20}, {2, 15}, {4, 7}, {7, 30}};
     cpp11::TestMaxHeap(pair_vec);
+}
+
+TEST(test11_cast, cast_unit_test) {
+    cpp11::ConstTest();
 }
