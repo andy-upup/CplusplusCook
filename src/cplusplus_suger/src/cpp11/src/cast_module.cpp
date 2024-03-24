@@ -35,4 +35,17 @@ void ConstTest() {
     std::cout << "target val: " << val << std::endl;
 }
 
+class Person {};
+class Son : public Person {};
+
+void StaticTest() {
+    char str_a = 'c';
+    int val = static_cast<int>(str_a);
+    std::cout << "val: " << val << std::endl;
+
+    const char kstr_b = 'c';
+    char str_b = static_cast<char>(kstr_b);
+    std::cout << "str_b: " << str_b << std::endl;
+}
+
 } // namespace cpp11

@@ -62,7 +62,11 @@ void DaGraph::BuildGraph(const int limit_num, const bool is_heap) {
     }
     for (auto& edge: edges_) {
         const int key = edge.source_;
-        graph_[key].emplace_back(edge.target_, edge.weight_);
+        if ((graph_.find(key) == graph_.end()) ||
+            ((int)graph_[key].size() < limit_num) ||
+            (graph_[key].back().second < edge.weight_)) {
+            graph_[key].emplace_back(edge.target_, edge.weight_);
+        }
         if (is_heap) {
             std::push_heap(graph_[key].begin(), graph_[key].end(), cmp);
         }
