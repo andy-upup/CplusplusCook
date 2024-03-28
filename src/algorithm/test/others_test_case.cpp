@@ -28,3 +28,8 @@ TEST(test_algo_others, pipeline_unit_test) {
     algo::ThreeStagePipeline pipeline;
     pipeline.Run(program);
 }
+
+TEST(test_algo_others, calculator_unit_test) {
+    std::string input = "(1+1)*2/2-5";
+    algo::CalculatorWithBrackets(input);
+}

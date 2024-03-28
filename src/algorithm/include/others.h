@@ -2,11 +2,14 @@
 #define OTHERS_H__
 #include <iostream>
 #include <queue>
+#include <stack>
+#include <string>
 #include <vector>
 
 namespace algo {
 
 int JuiceNum(const int n);
+void CalculatorWithBrackets(std::string& input);
 
 class Instruction {
  public:
