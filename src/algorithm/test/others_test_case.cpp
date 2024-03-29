@@ -36,3 +36,9 @@ TEST(test_algo_others, calculator_unit_test) {
     std::string input = "1+1*4/2-2*1";
     algo::Calculator(input);
 }
+
+TEST(test_algo_others, repeat_digit_unit_test) {
+    std::vector<int> nums{1, 1, 2, 2, 5};
+    int digit = algo::NotRepeatDigit(nums);
+    std::cout << "The only not repeat digit is: " << digit << std::endl;
+}

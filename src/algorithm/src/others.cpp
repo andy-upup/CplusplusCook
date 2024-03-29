@@ -127,4 +127,20 @@ void Calculator(std::string& input) {
     std::cout << digits.top() << std::endl;
 }
 
+int NotRepeatDigit(const std::vector<int>& nums) {
+    if ((nums.empty()) || (nums.size() % 2 != 1)) {
+        return -1;
+    }
+    if (nums.size() == 1) {
+        return nums[0];
+    }
+
+    const int size = static_cast<int>(nums.size());
+    int digit = nums[0];
+    for (int i = 1; i < size; ++i) {
+        digit ^= nums[i];
+    }
+    return digit;
+}
+
 } // namespace algo

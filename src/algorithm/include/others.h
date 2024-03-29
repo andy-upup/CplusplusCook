@@ -11,6 +11,7 @@ namespace algo {
 int JuiceNum(const int n);
 void CalculatorWithBrackets(std::string& input);
 void Calculator(std::string& input);
+int NotRepeatDigit(const std::vector<int>& nums);
 
 class Instruction {
  public:
