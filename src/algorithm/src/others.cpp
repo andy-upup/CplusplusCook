@@ -36,12 +36,19 @@ static void Calculate(
     return;
 }
 
-// Wether the priority of top is higher than current, or equal.
-static bool Cmp(char top, char current) {
+// Whether the priority of top is higher than current, or equal.
+static bool CmpX(char top, char current) {
     // Indicates that the corresponding right bracket has not been reached yet.
     if (top == '(') {
         return false;
     } else if ((top == '+' || top == '-') && (current == '*' || current == '/')) {
+        return false;
+    }
+    return true;
+}
+
+static bool Cmp(char top, char current) {
+    if ((top == '+' || top == '-') && (current == '*' || current == '/')) {
         return false;
     }
     return true;
@@ -53,7 +60,8 @@ void CalculatorWithBrackets(std::string& input) {
     ops.push('(');
         input += ')';
     bool is_next_op = false;
-    for (int i = 0; i < input.size(); ++i) {
+    const int size = static_cast<int>(input.size());
+    for (int i = 0; i < size; ++i) {
         if (input[i] == '(' || input[i] == '[' || input[i] == '{') {
             ops.push('(');
         } else if (input[i] == ')' || input[i] == ']' || input[i] == '}') {
@@ -62,7 +70,7 @@ void CalculatorWithBrackets(std::string& input) {
             }
             ops.pop();
         } else if (is_next_op) {
-            while (Cmp(ops.top(), input[i])) {
+            while (CmpX(ops.top(), input[i])) {
                 Calculate(digits, ops);
             }
             ops.push(input[i]);
@@ -70,15 +78,49 @@ void CalculatorWithBrackets(std::string& input) {
         } else { // Get digits
             int j = i;
             // '+' or '-' maybe a sign
-            if (input[j] == '+' || input[j] == '-') {
+            if (input[i] == '+' || input[i] == '-') {
                 ++i;
             }
             while (input[i] >= '0' && input[i] <= '9') {
                 ++i;
             }
-            digits.push((double)std::stoi(input.substr(j, i - j)));
+            digits.push(static_cast<double>(std::stoi(input.substr(j, i - j))));
             --i;
             // Next charactor is an operator
+            is_next_op = true;
+        }
+    }
+    std::cout << digits.top() << std::endl;
+}
+
+void Calculator(std::string& input) {
+    std::stack<double> digits;
+    std::stack<char> ops;
+
+    bool is_next_op = false;
+    const int size = static_cast<int>(input.size());
+    for (int i = 0; i < size; ++i) {
+        if (is_next_op) {
+            while (!ops.empty() && Cmp(ops.top(), input[i])) {
+                Calculate(digits, ops);
+            }
+            ops.push(input[i]);
+            is_next_op = false;
+        } else {
+            int j = i;
+            if (input[i] == '+' || input[i] == '-') {
+                ++i;
+            }
+            while (input[i] >= '0' && input[i] <= '9') {
+                ++i;
+            }
+            digits.push(static_cast<double>(std::stoi(input.substr(j, i - j))));
+            --i;
+            if (i == size - 1) {
+                while (!ops.empty()) {
+                    Calculate(digits, ops);
+                }
+            }
             is_next_op = true;
         }
     }

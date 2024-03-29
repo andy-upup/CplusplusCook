@@ -30,6 +30,9 @@ TEST(test_algo_others, pipeline_unit_test) {
 }
 
 TEST(test_algo_others, calculator_unit_test) {
-    std::string input = "(1+1)*2/2-5";
-    algo::CalculatorWithBrackets(input);
+    std::string input_with_brackets = "(1+1)*2/2-5";
+    algo::CalculatorWithBrackets(input_with_brackets);
+
+    std::string input = "1+1*4/2-2*1";
+    algo::Calculator(input);
 }

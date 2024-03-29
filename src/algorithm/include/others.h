@@ -10,6 +10,7 @@ namespace algo {
 
 int JuiceNum(const int n);
 void CalculatorWithBrackets(std::string& input);
+void Calculator(std::string& input);
 
 class Instruction {
  public:

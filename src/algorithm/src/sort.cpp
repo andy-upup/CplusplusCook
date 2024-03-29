@@ -148,10 +148,10 @@ static void QuickSort(std::vector<int> &vec, const int start, const int end) {
         if (left < right) {
             vec[right--] = vec[left];
         }
-        vec[left] = key;
-        QuickSort(vec, start, left - 1);
-        QuickSort(vec, left + 1, end);
     }
+    vec[left] = key;
+    QuickSort(vec, start, left - 1);
+    QuickSort(vec, left + 1, end);
 }
 
 void QuickSort(std::vector<int> &vec) {
