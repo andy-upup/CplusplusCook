@@ -14,7 +14,7 @@ execute_mode=$1
 
 if [ ${execute_mode} == "CPP" ]; then
     cd ${linux_build_path}/install/bin/cplusplus_suger
-    ./cpp11_test_case --gtest_filter=test11_cast.cast_unit_test
+    ./cpp11_test_case --gtest_filter=test11_template.specialization_unit_test
 elif [ ${execute_mode} == "ALGO" ]; then
     cd ${linux_build_path}/install/bin/algorithm
     ./others_test_case --gtest_filter=test_algo_others.repeat_digit_unit_test

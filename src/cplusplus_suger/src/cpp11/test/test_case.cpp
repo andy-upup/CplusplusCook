@@ -72,6 +72,22 @@ TEST(test11_template, variable_template_unit_test) {
     cpp11::Executor(cpp11::ComputeSum, 10, 100);
 }
 
+TEST(test11_template, specialization_unit_test) {
+    cpp11::TempPartial<double, double> comp1;
+    comp1.Print(3.0, 4.0);
+
+    cpp11::TempPartial<float, int> comp2;
+    comp2.Print(3.0, 3);
+
+    cpp11::TempPartial<int, float> comp3;
+    comp3.Print(3, 4.0);
+
+    std::cout << std::endl;
+
+    cpp11::FuncTempPrint<10>();
+    cpp11::FuncTempPrint<100>();
+}
+
 TEST(TestTuple, tuple_unit_test) {
     cpp11::UseApisOfTuple();
 }
