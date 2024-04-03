@@ -88,8 +88,12 @@ TEST(test11_template, specialization_unit_test) {
     cpp11::FuncTempPrint<100>();
 }
 
-TEST(TestTuple, tuple_unit_test) {
+TEST(test11_tuple, tuple_unit_test) {
     cpp11::UseApisOfTuple();
+}
+
+TEST(test11_tuple, tuple_and_others_unit_test) {
+    cpp11::TupleTest();
 }
 
 TEST(test11_class, class_unit_test) {

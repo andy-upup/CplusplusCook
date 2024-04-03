@@ -2,6 +2,10 @@
 
 namespace cpp11 {
 
+static bool Cmp(std::tuple<int, int, float>& a, std::tuple<int, int, float>& b) {
+    return std::get<2>(a) > std::get<2>(b);
+}
+
 void UseApisOfTuple() {
     std::tuple<int, char> first;
     std::tuple<int, char> second(first);
@@ -30,6 +34,43 @@ void UseApisOfTuple() {
     std::tie(val, str) = fifth;
     std::cout << "val: " << val << std::endl;
     std::cout << "str: " << str << std::endl;
+}
+
+void TupleTest() {
+    std::tuple<int, float> tp1(10, 3.14);
+    std::cout << "tp1: " << std::get<0>(tp1) << ' ' << std::get<1>(tp1) << std::endl;
+    tp1 = std::make_tuple(5, 2.4);
+    std::cout << "tp1: " << std::get<0>(tp1) << ' ' << std::get<1>(tp1) << std::endl;
+
+    int num = std::tuple_size<decltype(tp1)>::value;
+
+    std::pair<int, float> pair1(1, 10.0);
+    std::cout << "pair1: " << pair1.first << ' ' << pair1.second << std::endl;
+
+    std::vector<std::pair<int, int>> pairs;
+    const int pair_num = 3;
+    for (int i = 0; i < pair_num; ++i) {
+        pairs.emplace_back(i, i);
+    }
+    for (int i = 0; i < pair_num; ++i) {
+        std::cout << "pair " << i << ": " <<
+            pairs[i].first << ' ' <<
+            pairs[i].second << std::endl;
+    }
+
+    std::vector<std::tuple<int, int, float>> tuples;
+    const int tuple_num = 3;
+    for (int i = 0; i < tuple_num; ++i) {
+        tuples.emplace_back(i, i, i);
+    }
+
+    std::sort(tuples.begin(), tuples.end(), Cmp);
+    for (int i = 0; i < tuple_num; ++i) {
+        std::cout << "tupe " << i << ": " <<
+            std::get<0>(tuples[i]) << ' ' <<
+            std::get<1>(tuples[i]) << ' ' <<
+            std::get<2>(tuples[i]) << std::endl;
+    }
 }
 
 } // namespace cpp11
