@@ -42,7 +42,7 @@ void TupleTest() {
     tp1 = std::make_tuple(5, 2.4);
     std::cout << "tp1: " << std::get<0>(tp1) << ' ' << std::get<1>(tp1) << std::endl;
 
-    int num = std::tuple_size<decltype(tp1)>::value;
+    // int num = std::tuple_size<decltype(tp1)>::value;
 
     std::pair<int, float> pair1(1, 10.0);
     std::cout << "pair1: " << pair1.first << ' ' << pair1.second << std::endl;

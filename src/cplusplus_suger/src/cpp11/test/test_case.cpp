@@ -103,7 +103,7 @@ TEST(test11_class, class_unit_test) {
 
     cpp11::DerivedVirtualTest derived;
     cpp11::DerivedVirtualTest* pderived = &derived;
-    cpp11::DerivedVirtualTest* pbase = &derived;
+    cpp11::BaseVirtualTest* pbase = &derived;
     derived.PrintClassName();
     derived.Print();
     pderived->PrintClassName();
