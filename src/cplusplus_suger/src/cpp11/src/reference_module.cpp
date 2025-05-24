@@ -3,16 +3,16 @@
 namespace cpp11 {
 
 Demo GetDemo() {
-    // construct, copy-construct
-    return Demo();
+  // construct, copy-construct
+  return Demo();
 }
 
 void OtherDef(int& val) {
-    std::cout << "input: " << val << " is lval!" << std::endl;
+  std::cout << "input: " << val << " is lval!" << std::endl;
 }
 
 void OtherDef(const int& val) {
-    std::cout << "input: " << val << " is rval!" << std::endl;
+  std::cout << "input: " << val << " is rval!" << std::endl;
 }
 
-} // namespace cpp11
+}  // namespace cpp11

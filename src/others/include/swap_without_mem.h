@@ -6,5 +6,5 @@ namespace others {
 void SwapWithoutMemArithmetic(int& x, int& y);
 void SwapWithoutMemXor(int& x, int& y);
 
-} // namespace others
+}  // namespace others
 #endif

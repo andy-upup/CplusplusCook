@@ -6,5 +6,5 @@ namespace cpp17 {
 
 void IfSwitch(int n);
 
-} // namespace cpp17
+}  // namespace cpp17
 #endif

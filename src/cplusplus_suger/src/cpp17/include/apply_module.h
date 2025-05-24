@@ -8,8 +8,8 @@ namespace cpp17 {
 void ApplyComputeSum(int first, int second);
 
 struct Foo {
-    Foo(int first, float second, int third);
+  Foo(int first, float second, int third);
 };
 
-} // namespace cpp17
+}  // namespace cpp17
 #endif

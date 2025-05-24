@@ -2,8 +2,6 @@
 
 namespace cpp17 {
 
-void TestStringView(std::string_view stv) {
-    std::cout << stv << std::endl;
-}
+void TestStringView(std::string_view stv) { std::cout << stv << std::endl; }
 
-} // namespace cpp17
+}  // namespace cpp17

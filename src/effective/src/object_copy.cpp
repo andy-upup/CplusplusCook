@@ -2,8 +2,6 @@
 
 namespace effective {
 
-void CallLog(const std::string& str) {
-    std::cout << str << std::endl;
-}
+void CallLog(const std::string& str) { std::cout << str << std::endl; }
 
-} // namespace effective
+}  // namespace effective

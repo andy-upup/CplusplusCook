@@ -11,5 +11,5 @@ void UseSharedPtrReset();
 void InitUniquePtr();
 void UseUniquePtrApi();
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

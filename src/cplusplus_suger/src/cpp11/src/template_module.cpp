@@ -2,9 +2,7 @@
 
 namespace cpp11 {
 
-int ComputeSum(const int x, const int y) {
-    return x + y;
-}
+int ComputeSum(const int x, const int y) { return x + y; }
 
 // template<>
 // void FuncTempPrint<10>() {
@@ -16,4 +14,4 @@ int ComputeSum(const int x, const int y) {
 //     std::cout << "Function specialization: " << 100 << std::endl;
 // }
 
-} // namespace cpp11
+}  // namespace cpp11

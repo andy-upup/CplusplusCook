@@ -1,7 +1,7 @@
 if(${WITH_DESIGN_PATTERN})
-    set(DESIGN_PATTERN_DIR ${CMAKE_SOURCE_DIR}/src/design_pattern)
+  set(DESIGN_PATTERN_DIR ${CMAKE_SOURCE_DIR}/src/design_pattern)
 
-    aux_source_directory(${DESIGN_PATTERN_DIR}/src DESIGN_PATTERN_SRCS)
+  aux_source_directory(${DESIGN_PATTERN_DIR}/src DESIGN_PATTERN_SRCS)
 endif()
 
 message(STATUS "DESIGN_PATTERN_DIR: ${DESIGN_PATTERN_DIR}")

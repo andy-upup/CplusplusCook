@@ -8,96 +8,97 @@ namespace cpp11 {
 
 class Segment {
  public:
-    Segment() = default;
-    virtual ~Segment() = default;
-    virtual std::ostream& Output(std::ostream& os) const = 0;
+  Segment() = default;
+  virtual ~Segment() = default;
+  virtual std::ostream& Output(std::ostream& os) const = 0;
 };
 
 class StringSegment : public Segment {
  public:
-    StringSegment(std::string& str) : msg_(str) {}
-    StringSegment(std::string&& str) : msg_(std::move(str)) {}
-    virtual ~StringSegment() = default;
+  StringSegment(std::string& str) : msg_(str) {}
+  StringSegment(std::string&& str) : msg_(std::move(str)) {}
+  virtual ~StringSegment() = default;
 
-    std::ostream& Output(std::ostream& os) const {
-        os << msg_;
-        return os;
-    }
+  std::ostream& Output(std::ostream& os) const {
+    os << msg_;
+    return os;
+  }
+
  private:
-    std::string msg_;
+  std::string msg_;
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Segment& seg) {
-    return seg.Output(os);
+  return seg.Output(os);
 }
 
 class IntSegment : public Segment {
  public:
-    IntSegment(int t) : value_(t) {}
-    virtual ~IntSegment() = default;
+  IntSegment(int t) : value_(t) {}
+  virtual ~IntSegment() = default;
 
-    std::ostream& Output(std::ostream& os) const {
-        os << value_;
-        return os;
-    }
+  std::ostream& Output(std::ostream& os) const {
+    os << value_;
+    return os;
+  }
+
  private:
-    int value_;
+  int value_;
 };
 
 class MsgHolder {
  public:
-    MsgHolder() = default;
-    ~MsgHolder() = default;
+  MsgHolder() = default;
+  ~MsgHolder() = default;
 
-    template<typename T>
-    void Add(T&& msg) {
-        segs_.push_back(std::make_shared<StringSegment>(std::forward<T>(msg)));
-    }
+  template <typename T>
+  void Add(T&& msg) {
+    segs_.push_back(std::make_shared<StringSegment>(std::forward<T>(msg)));
+  }
 
-    void Add(int value) {
-        segs_.push_back(std::make_shared<IntSegment>(value));
-    }
+  void Add(int value) { segs_.push_back(std::make_shared<IntSegment>(value)); }
 
-    template<typename T, typename... Args>
-    void Add(T&& t, Args&&... rest) {
-        Add(std::forward<T>(t));
-        Add(std::forward<Args>(rest)...);
-    }
+  template <typename T, typename... Args>
+  void Add(T&& t, Args&&... rest) {
+    Add(std::forward<T>(t));
+    Add(std::forward<Args>(rest)...);
+  }
 
-    std::ostream& Output(std::ostream& os) const {
-        for (auto seg: segs_) {
-            // seg->Output(os);
-            os << (*seg);
-        }
-        return os;
+  std::ostream& Output(std::ostream& os) const {
+    for (auto seg : segs_) {
+      // seg->Output(os);
+      os << (*seg);
     }
+    return os;
+  }
+
  private:
-    std::vector<std::shared_ptr<Segment>> segs_;
+  std::vector<std::shared_ptr<Segment>> segs_;
 };
 
 inline std::ostream& operator<<(std::ostream& os, const MsgHolder& holder) {
-    return holder.Output(os);
+  return holder.Output(os);
 }
 
-template<typename T>
+template <typename T>
 static void Print(T& t) {
-    std::cout << "Lvalue ref: " << t << std::endl;
+  std::cout << "Lvalue ref: " << t << std::endl;
 }
 
-template<typename T>
+template <typename T>
 static void Print(T&& t) {
-    std::cout << "Rvalue ref: " << t << std::endl;
+  std::cout << "Rvalue ref: " << t << std::endl;
 }
 
-template<typename T>
+template <typename T>
 void TestForward(T&& v) {
-    // v is lvalue, always call Print(T& t)
-    Print(v);
-    // Determined by input parameters
-    Print(std::forward<T>(v));
-    // v is rvalue, always call Print(T&& t)
-    Print(std::move(v));
+  // v is lvalue, always call Print(T& t)
+  Print(v);
+  // Determined by input parameters
+  Print(std::forward<T>(v));
+  // v is rvalue, always call Print(T&& t)
+  Print(std::move(v));
 }
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

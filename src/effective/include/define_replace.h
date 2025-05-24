@@ -6,9 +6,9 @@ namespace effective {
 
 class GamePlayer {
  private:
-    static const int num_turns_ = 5;
-    int scores_[num_turns_];
+  static const int num_turns_ = 5;
+  int scores_[num_turns_];
 };
 
-} // namespace effective
+}  // namespace effective
 #endif

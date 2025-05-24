@@ -6,5 +6,5 @@ namespace cpp11 {
 
 void ConstTest();
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

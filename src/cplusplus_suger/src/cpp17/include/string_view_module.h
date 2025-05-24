@@ -7,5 +7,5 @@ namespace cpp17 {
 
 void TestStringView(std::string_view stv);
 
-} // namespace cpp17
+}  // namespace cpp17
 #endif

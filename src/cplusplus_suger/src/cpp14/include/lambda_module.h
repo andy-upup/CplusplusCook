@@ -6,5 +6,5 @@ namespace cpp14 {
 
 void InputAutoArg();
 
-} // namespace cpp14
+}  // namespace cpp14
 #endif

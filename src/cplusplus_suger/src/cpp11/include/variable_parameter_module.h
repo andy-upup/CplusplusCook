@@ -7,5 +7,5 @@ namespace cpp11 {
 
 void VairFun(int count, ...);
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

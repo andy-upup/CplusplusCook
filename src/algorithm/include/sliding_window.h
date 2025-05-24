@@ -3,7 +3,5 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-namespace algo {
-
-} // namespace algo
+namespace algo {}  // namespace algo
 #endif

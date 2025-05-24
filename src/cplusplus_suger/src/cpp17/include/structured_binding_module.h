@@ -10,5 +10,5 @@ void InitPair();
 void InitVector();
 std::tuple<int, double> InitTuple();
 
-} // namespace cpp17
+}  // namespace cpp17
 #endif

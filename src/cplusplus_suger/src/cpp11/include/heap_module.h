@@ -10,5 +10,5 @@ void TestMaxHeap(std::vector<int>& vec);
 void TestMinHeap(std::vector<int>& vec);
 void TestMaxHeap(std::vector<std::pair<int, int>>& vec);
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

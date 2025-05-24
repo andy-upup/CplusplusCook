@@ -6,7 +6,5 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
-namespace algo {
-
-} // namespace algo
+namespace algo {}  // namespace algo
 #endif

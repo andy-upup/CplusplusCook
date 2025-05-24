@@ -7,5 +7,5 @@ namespace cpp17 {
 
 void TestVariant();
 
-} // namespace cpp17
+}  // namespace cpp17
 #endif

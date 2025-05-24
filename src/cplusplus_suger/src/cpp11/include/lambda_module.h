@@ -10,5 +10,5 @@ void SortWithFunc();
 void LambdaRename();
 void PassValVsRef();
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

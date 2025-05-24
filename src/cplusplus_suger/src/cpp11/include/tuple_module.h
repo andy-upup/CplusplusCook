@@ -10,5 +10,5 @@ namespace cpp11 {
 void UseApisOfTuple();
 void TupleTest();
 
-} // namespace cpp11
+}  // namespace cpp11
 #endif

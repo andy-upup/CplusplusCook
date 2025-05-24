@@ -4,4 +4,4 @@ namespace effective {
 
 const int GamePlayer::num_turns_;
 
-} // namespace effective
+}  // namespace effective

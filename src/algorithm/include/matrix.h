@@ -4,7 +4,5 @@
 #include <iostream>
 #include <map>
 #include <vector>
-namespace algo {
-
-} // namespace algo
+namespace algo {}  // namespace algo
 #endif

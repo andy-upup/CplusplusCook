@@ -6,14 +6,12 @@
 namespace effective {
 
 struct WidgetSp {
-    int val_;
+  int val_;
 };
 
-inline int Priority() {
-    return 0;
-}
+inline int Priority() { return 0; }
 
 void ProcessWidget(std::shared_ptr<WidgetSp> widget, int priority);
 
-} // namespace effective
+}  // namespace effective
 #endif

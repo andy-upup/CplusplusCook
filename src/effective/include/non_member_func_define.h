@@ -5,35 +5,35 @@
 // 46
 namespace effective {
 
-template<typename T> class Rational;
+template <typename T>
+class Rational;
 
-template<typename T>
+template <typename T>
 const Rational<T> DoMutiply(const Rational<T>& lhs, const Rational<T>& rhs);
 
-template<typename T>
+template <typename T>
 class Rational {
  public:
-    Rational(const T& numerator = 0, const T& denominator = 1) {
-        std::cout << "numerator: " << numerator <<
-            " denominator: " << denominator << std::endl;
-    }
+  Rational(const T& numerator = 0, const T& denominator = 1) {
+    std::cout << "numerator: " << numerator << " denominator: " << denominator
+              << std::endl;
+  }
 
-    const T GetNumerator() const { return (T)(0); }
-    const T GetDenominator() const { return (T)(0); }
+  const T GetNumerator() const { return (T)(0); }
+  const T GetDenominator() const { return (T)(0); }
 
-    friend const Rational operator*(const Rational& lhs, const Rational& rhs) {
-        return DoMutiply(lhs, rhs);
-    }
+  friend const Rational operator*(const Rational& lhs, const Rational& rhs) {
+    return DoMutiply(lhs, rhs);
+  }
 
-    void Print() {
-        std::cout << "Hello World!" << std::endl;
-    }
+  void Print() { std::cout << "Hello World!" << std::endl; }
 };
 
-template<typename T>
+template <typename T>
 const Rational<T> DoMutiply(const Rational<T>& lhs, const Rational<T>& rhs) {
-    return Rational<T>(lhs.GetNumerator() * rhs.GetNumerator(), lhs.GetDenominator() * rhs.GetDenominator());
+  return Rational<T>(lhs.GetNumerator() * rhs.GetNumerator(),
+                     lhs.GetDenominator() * rhs.GetDenominator());
 }
 
-} // namespace effective
+}  // namespace effective
 #endif

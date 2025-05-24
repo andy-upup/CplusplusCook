@@ -7,14 +7,15 @@ namespace cpp11 {
 
 class BindDemo {
  public:
-    void DisplaySum(const int x, const int y) {
-        std::cout << "Sum of " << x << " and " << y << " is: " << x + y << std::endl;
-    }
+  void DisplaySum(const int x, const int y) {
+    std::cout << "Sum of " << x << " and " << y << " is: " << x + y
+              << std::endl;
+  }
 };
 
 double BindDivision(const double x);
 void BindDisplay(const int y);
 
-} // namespace cpp11
+}  // namespace cpp11
 
 #endif
