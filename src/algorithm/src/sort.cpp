@@ -64,6 +64,16 @@ void HeapSort(std::vector<int> &vec) {
   HeapSort(vec, size);
 }
 
+void Insert(std::vector<int>& nums) {
+  for (int i = 1; i < nums.size(); ++i) {
+    for (int j = i; j > 0; --j) {
+      if (nums[j] < nums[j - 1]) {
+        std::swap(nums[j], nums[j - 1]);
+      }
+    }
+  }
+}
+
 ///////////////////////////////////////////////////////////////////////
 // sort the previous part,
 // insert the followint number into the appropriate position in the sorting part
