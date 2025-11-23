@@ -38,39 +38,46 @@ static void AdjustHeap(std::vector<int> &vec, int size, int index) {
   }
 }
 
-void HeapSort(std::vector<int> &vec, int size) {
-  // if i = size / 2 - 1,
-  // left = 2 * i + 1 = size - 1,
-  // right = 2 * i + 2 = size
-  // build large root heap
-  for (int i = size / 2 - 1; i >= 0; --i) {
-    // build heap from bottom up
-    AdjustHeap(vec, size, i);
+// up
+static void HeapInsert(std::vector<int> &vec, int index) {
+  while (vec[index] > vec[(index - 1) / 2]) {
+    std::swap(vec[index], vec[(index - 1) / 2]);
+    index = (index - 1) / 2;
   }
-  for (int i = size - 1; i >= 1; --i) {
-    std::swap(vec[0], vec[i]);
-    // size is i, size is decreasing
-    AdjustHeap(vec, i, 0);
+}
+
+// we can use Heapify to construct a big root heap
+// down
+static void Heapify(std::vector<int> &vec, int index, int heap_size) {
+  int left = 2 * index + 1;
+  while (left < heap_size) {
+    int largest =
+        left + 1 < heap_size && vec[left + 1] > vec[left] ? left + 1 : left;
+    largest = vec[largest] > vec[index] ? largest : index;
+    if (largest == index) {
+      break;
+    }
+    std::swap(vec[index], vec[largest]);
+    index = largest;
+    left = 2 * index + 1;
   }
 }
 
 void HeapSort(std::vector<int> &vec) {
-  std::cout << __func__ << std::endl;
-  if (vec.empty()) {
-    std::cout << "Empty vec!" << std::endl;
+  if (vec.size() < 2) {
     return;
   }
-  const int size = vec.size();
-  HeapSort(vec, size);
-}
+  for (int i = 0; i < vec.size(); ++i) {
+    // heap insert from 0 to size - 1
+    // construct the 1st big root heap
+    HeapInsert(vec, i);
+  }
+  int heap_size = vec.size();
+  std::swap(vec[0], vec[--heap_size]);
 
-void Insert(std::vector<int>& nums) {
-  for (int i = 1; i < nums.size(); ++i) {
-    for (int j = i; j > 0; --j) {
-      if (nums[j] < nums[j - 1]) {
-        std::swap(nums[j], nums[j - 1]);
-      }
-    }
+  while (heap_size > 0) {
+    Heapify(vec, 0, heap_size);
+    std::swap(vec[0], vec[--heap_size]);
   }
 }
 
