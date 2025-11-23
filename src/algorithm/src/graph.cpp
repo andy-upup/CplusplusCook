@@ -90,4 +90,34 @@ void DaGraph::PrintGraph() {
   }
 }
 
+Graph* CreateGraph(std::vector<std::vector<int>>& matrix) {
+  if (matrix.empty()) {
+    return nullptr;
+  }
+  Graph* graph = new Graph;
+  for (int i = 0; i < matrix.size(); ++i) {
+    if (matrix[i].size() != 3) {
+      return nullptr;
+    }
+    int begin_val = matrix[i][0];
+    int end_val = matrix[i][1];
+    int weight = matrix[i][2];
+    if (graph->nodes_.find(begin_val) == graph->nodes_.end()) {
+      graph->nodes_[begin_val] = new GraphNode(begin_val);
+    }
+    if (graph->nodes_.find(end_val) == graph->nodes_.end()) {
+      graph->nodes_[end_val] = new GraphNode(end_val);
+    }
+    GraphNode* begin_node = graph->nodes_[begin_val];
+    GraphNode* end_node = graph->nodes_[end_val];
+
+    GraphEdge* edge = new GraphEdge(begin_node, end_node, weight);
+    begin_node->nexts_.push_back(end_node);
+    begin_node->out_++;
+    begin_node->edges_.push_back(edge);
+    end_node->in_++;
+    graph->edges_.insert(edge);
+  }
+}
+
 }  // namespace algo
